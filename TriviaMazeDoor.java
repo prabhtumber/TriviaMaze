@@ -5,7 +5,7 @@ public class TriviaMazeDoor {
 
 
     public TriviaMazeDoor() {
-       
+
         this.isLocked = false;
     }
 

@@ -1,6 +1,6 @@
-public class multipleChoiseQuestion extends QuestionAbstract {
+public class multipleChoiceQuestion extends QuestionAbstract {
 
-    public MultipleChoiceQuestion(final String theQuestion, final String theAnswer) {
+    public multipleChoiceQuestion(final String theQuestion, final String theAnswer) {
         super(theQuestion, theAnswer);
     }
 

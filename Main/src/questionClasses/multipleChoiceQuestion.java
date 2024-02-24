@@ -1,3 +1,5 @@
+package questionClasses;
+
 public class multipleChoiceQuestion extends QuestionAbstract {
 
     public multipleChoiceQuestion(final String theQuestion, final String theAnswer) {

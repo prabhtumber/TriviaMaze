@@ -11,7 +11,7 @@ public class TriviaMazeRoom extends TriviaMazeDoor {
     }
 
     public boolean unlockDoor(int index) {
-        if (index >= 0 && index < myDoors.length && !myDoors[index].isLocked()) {
+        if (index >= 0 && index < myDoors.length && !myDoors[index].isMyDoorLocked()) {
             myDoors[index].unlock();
             return true;
         }

@@ -1,18 +1,22 @@
-import java.io.Serializable;
+package questionClasses;
 
-public abstract class QuestionAbstract implements Serializable {
+public class Question {
 
     private final String questionText;
     private final String answerText;
 
-    public QuestionAbstract(final String question, final String answer) {
+    public Question(final String question, final String answer) {
         questionText = question;
         answerText = answer;
     }
 
-    public abstract String getQuestionText();
+    public String getQuestionText() {
+        return questionText;
+    }
 
-    public abstract String getCorrectAnswer();
+    public String getCorrectAnswer() {
+        return answerText;
+    }
 
     public String getQuestion() {
         return questionText;

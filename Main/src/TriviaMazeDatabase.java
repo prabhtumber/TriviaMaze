@@ -28,9 +28,6 @@ public class TriviaMazeDatabase {
             case 2:
                 getTrueFalseQuestion();
                 break;
-            default:
-                // This case will never be reached with current configuration
-                break;
         }
     }
 

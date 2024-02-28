@@ -69,8 +69,7 @@ public class TriviaMaze {
         mazeRepresentation.append('\n');
         return mazeRepresentation.toString();
     }
-    private static class Cell implements Serializable {
-        private static final long serialVersionUID = 1L;
+    private static class Cell {
         private final boolean hasNorthDoor;
         private final boolean hasWestDoor;
         private final boolean hasEastDoor;

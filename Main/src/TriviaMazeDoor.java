@@ -10,9 +10,7 @@ public class TriviaMazeDoor {
 
         myDoorLocked = true;
         myDoorLockedPermanent = false;
-
-        // placeholder for work on this after the database java file is added;
-        myDoorQuestion = null;
+        myDoorQuestion = TriviaMazeDatabase.getQuestion();
     }
 
     public boolean isMyDoorLocked() {
@@ -41,6 +39,10 @@ public class TriviaMazeDoor {
 
     public void setTheLockPermanent(final boolean theLockPermanent) {
         myDoorLockedPermanent = theLockPermanent;
+    }
+
+    public String getQuestion() {
+        return myDoorQuestion.getQuestionText();
     }
 
 }

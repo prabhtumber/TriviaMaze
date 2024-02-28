@@ -5,9 +5,9 @@ public class Question {
     private final String questionText;
     private final String answerText;
 
-    public Question(final String question, final String answer) {
-        questionText = question;
-        answerText = answer;
+    public Question(final String theQuestion, final String theAnswer) {
+        questionText = theQuestion;
+        answerText = theAnswer;
     }
 
     public String getQuestionText() {

@@ -9,26 +9,15 @@ import java.util.Random;
 
 public class TriviaMazeDatabase {
 
-    public TriviaMazeDatabase() {
-
-        callRandomQuestionMethod();
-    }
-
-    private void callRandomQuestionMethod() {
+    public static Question getQuestion() {
         Random random = new Random();
-        int methodNumber = random.nextInt(3);
 
-        switch (methodNumber) {
-            case 0:
-                getShortAnswerQuestion();
-                break;
-            case 1:
-                getMCQQuestion();
-                break;
-            case 2:
-                getTrueFalseQuestion();
-                break;
-        }
+        return switch (random.nextInt(3)) {
+            case 0 -> getShortAnswerQuestion();
+            case 1 -> getMCQQuestion();
+            case 2 -> getTrueFalseQuestion();
+            default -> null;
+        };
     }
 
     private static Question getShortAnswerQuestion() {

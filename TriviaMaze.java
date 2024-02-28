@@ -1,9 +1,5 @@
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Random;
-public class TriviaMaze implements Serializable {
-    @Serial
-    private static final long serialVersionUID = -5203829590803086033L;
+public class TriviaMaze {
     private int playerXCoordinate;
     private int playerYCoordinate;
     private static final int MAZE_SIZE = 4;

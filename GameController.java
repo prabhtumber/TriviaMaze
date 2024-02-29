@@ -51,32 +51,20 @@ class Game {
     /**
      * Initializes the game.
      */
-    public void initialize() {
-        triviaMaze = new TriviaMaze();
-        display.displayTitle();
-        display.startIntroduction();
-    }
+//    public void initialize() {
+//        triviaMaze = new TriviaMaze();
+//        display.displayTitle();
+//        display.startIntroduction();
+//    }
 
     /**
      * Runs the main game loop.
      */
     public void run() {
-        display.displayGameType();
+       // display.displayGameType();
         startGame();
         boolean isActive = true;
-        while (isActive) {
-            if (!triviaMaze.possibleRoute()) {
-                display.displayPlayerLost();
-                isActive = false;
-            }
-            if (triviaMaze.isGameWon()) {
-                display.displayPlayerWon();
-                isActive = false;
-            }
-            if (isActive) {
-                playTriviaGame();
-            }
-        }
+        // still have to finish this
     }
 
     /**
@@ -89,12 +77,12 @@ class Game {
             userInput = scanner.nextLine();
             if (userInput.equalsIgnoreCase("new")) {
                 success = true;
-                display.displayInstructions();
+                //display.displayInstructions();
             } else if (userInput.equalsIgnoreCase("load")) {
                 if (loadSavedGame()) {
                     success = true;
                 } else {
-                    display.displayInvalidInput();
+                    //display.displayInvalidInput();
                 }
             }
         }
@@ -111,10 +99,10 @@ class Game {
             if (new File(SAVE_FILE_NAME).length() != 0) {
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 triviaMaze = (TriviaMaze) objectInputStream.readObject();
-                display.displayFileLoadSuccess();
+               // display.displayFileLoadSuccess();
                 success = true;
             } else {
-                display.displayFileLoadFailed();
+               // display.displayFileLoadFailed();
             }
         } catch (IOException e) {
             System.out.println("No saved file exists.");
@@ -128,8 +116,7 @@ class Game {
      * Plays the trivia game.
      */
     private void playTriviaGame() {
-        display.displayMaze(triviaMaze.toString());
-        display.displayRoom(triviaMaze.getRoomDisplay());
+      // still have to finish this
         handlePlayerInput();
     }
 
@@ -161,76 +148,19 @@ class Game {
     /**
      * Displays the game menu and handles player input for menu options.
      */
-    private void displayGameMenu() {
-        boolean isValidInput = false;
-        display.displayFileMenu();
-        while (!isValidInput) {
-            String userInput = scanner.nextLine();
-            if (userInput.toLowerCase().matches("save")) {
-                saveGame();
-                isValidInput = true;
-            } else if (userInput.toLowerCase().matches("load")) {
-                loadSavedGame();
-                isValidInput = true;
-            } else if (userInput.toLowerCase().matches("exit")) {
-                scanner.close();
-                System.exit(0);
-            } else {
-                display.displayInvalidInput();
-            }
-        }
-    }
+
 
     /**
      * Displays the help menu and handles player input for help options.
      */
-    private void displayHelpMenu() {
-        boolean isValidInput = false;
-        display.displayHelpMenu();
-        while (!isValidInput) {
-            String userInput = scanner.nextLine();
-            if (userInput.toLowerCase().matches("instr")) {
-                display.displayInstructions();
-                isValidInput = true;
-            } else if (userInput.toLowerCase().matches("about")) {
-                display.displayGameInfo();
-                isValidInput = true;
-            } else {
-                display.displayInvalidInput();
-            }
-        }
-    }
+
 
     /**
      * Moves the player in the specified direction.
      * @param direction The direction in which the player wants to move.
      * @return true if the player successfully moved, false otherwise.
      */
-    private boolean movePlayer(final String direction) {
-        boolean success = false;
-        triviaMaze.setCurrentDoor(direction);
-        if (triviaMaze.canMove()) {
-            success = true;
-            if (triviaMaze.checkLocked()) {
-                display.displayQuestion(triviaMaze.getDoorQuestion());
-                String playerAnswer = scanner.nextLine();
-                triviaMaze.checkPlayerAnswer(playerAnswer);
-                if (triviaMaze.checkLockedForever()) {
-                    display.displayIncorrectAnswer();
-                    display.displayAnswer(triviaMaze.getDoorAnswer());
-                } else {
-                    triviaMaze.movePlayer(direction);
-                    display.displayCorrectAnswer();
-                }
-            } else {
-                triviaMaze.movePlayer(direction);
-                display.displayRoomVisited();
-            }
-        } else {
-            display.displayWrongDirection();
-        }
-        return success;
-    }
+
 
     /**
      * Saves the current game state to a file.
@@ -242,9 +172,9 @@ class Game {
             objectOutputStream.writeObject(triviaMaze);
             objectOutputStream.close();
             fileOutputStream.close();
-            display.displayFileSaveSuccess();
+          //  display.displayFileSaveSuccess();
         } catch (IOException e) {
-            display.displayFileSaveFailed();
+          //  display.displayFileSaveFailed();
         }
     }
 }

@@ -9,6 +9,16 @@ public class GameController {
     /** The main game instance. */
     private static Game game;
 
+
+    /** The name of the file used for saving and loading the game state. */
+    private static final String SAVE_FILE_NAME = "GameSaveFile.txt";
+    /** Scanner object for user input. */
+    private static final Scanner scanner = new Scanner(System.in);
+    /** Display object for showing information to the user. */
+    private static final Display display = new Display();
+    /** The game state. */
+    private TriviaMaze triviaMaze;
+
     /**
      * Main method to start the game.
      * @param args Command-line arguments (not used).
@@ -33,21 +43,6 @@ public class GameController {
         game.run();
     }
 }
-
-/**
- * Represents the game logic and state.
- */
-class Game {
-
-    /** The name of the file used for saving and loading the game state. */
-    private static final String SAVE_FILE_NAME = "GameSaveFile.txt";
-    /** Scanner object for user input. */
-    private static final Scanner scanner = new Scanner(System.in);
-    /** Display object for showing information to the user. */
-    private static final Display display = new Display();
-    /** The game state. */
-    private TriviaMaze triviaMaze;
-
     /**
      * Initializes the game.
      */
@@ -144,24 +139,6 @@ class Game {
             }
         }
     }
-
-    /**
-     * Displays the game menu and handles player input for menu options.
-     */
-
-
-    /**
-     * Displays the help menu and handles player input for help options.
-     */
-
-
-    /**
-     * Moves the player in the specified direction.
-     * @param direction The direction in which the player wants to move.
-     * @return true if the player successfully moved, false otherwise.
-     */
-
-
     /**
      * Saves the current game state to a file.
      */
@@ -179,9 +156,3 @@ class Game {
     }
 }
 
-/**
- * Represents the display of information to the user.
- */
-class Display {
-    // Method implementations for displaying various messages and information.
-}

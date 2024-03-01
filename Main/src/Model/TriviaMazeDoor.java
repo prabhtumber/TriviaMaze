@@ -1,3 +1,5 @@
+package Model;
+
 import questionClasses.*;
 
 public class TriviaMazeDoor {

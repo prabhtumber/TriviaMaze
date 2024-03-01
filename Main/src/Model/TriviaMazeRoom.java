@@ -1,3 +1,5 @@
+package Model;
+
 public class TriviaMazeRoom {
     private enum Direction {
         NORTH, WEST, SOUTH, EAST
@@ -44,7 +46,7 @@ public class TriviaMazeRoom {
         return String.format("""
                              ROOM
                 ______________________________
-                              NORTH
+                            NORTH
                              ____
                              |%s|
                         ____ ---- ____
@@ -52,7 +54,7 @@ public class TriviaMazeRoom {
                         ---- ____ ----
                              |%s|
                              ----
-                              SOUTH
+                            SOUTH
                 ------------------------------
                 """, doorStates[Direction.NORTH.ordinal()], doorStates[Direction.WEST.ordinal()],
                 doorStates[Direction.EAST.ordinal()], doorStates[Direction.SOUTH.ordinal()]);

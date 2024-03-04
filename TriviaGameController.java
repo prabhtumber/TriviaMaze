@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
 
+import View.TriviaMazeDisplay;
 /**
  * Controller class for managing the game flow.
  */

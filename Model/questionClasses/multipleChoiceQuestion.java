@@ -1,4 +1,3 @@
-package questionClasses;
 
 public class multipleChoiceQuestion extends Question {
 

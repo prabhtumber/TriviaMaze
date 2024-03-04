@@ -1,0 +1,28 @@
+Index: Main/questionClasses/QuestionAbstract.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npublic abstract class QuestionAbstract  {\r\n\r\n\r\n    private final String questionText;\r\n    private final String answerText;\r\n\r\n    public QuestionItemBase(final String question, final String answer) {\r\n        questionText = question;\r\n        answerText = answer;\r\n    }\r\n\r\n    public abstract String getQuestionText();\r\n    public abstract String getCorrectAnswer();\r\n\r\n    public String getQuestion() {\r\n        return questionText;\r\n    }\r\n\r\n    public String getAnswer() {\r\n        return answerText;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/Main/questionClasses/QuestionAbstract.java b/Main/questionClasses/QuestionAbstract.java
+--- a/Main/questionClasses/QuestionAbstract.java	
++++ b/Main/questionClasses/QuestionAbstract.java	
+@@ -1,5 +1,5 @@
+ 
+-public abstract class QuestionAbstract  {
++public abstract class QuestionAbstract implements   {
+ 
+ 
+     private final String questionText;
+Index: Main/src/TriviaMazeDoor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npublic class TriviaMazeDoor {\r\n\r\n    private boolean isLocked;\r\n\r\n\r\n    public TriviaMazeDoor() {\r\n\r\n        this.isLocked = false;\r\n    }\r\n\r\n\r\n    public void unlock() {\r\n        isLocked = false;\r\n    }\r\n\r\n\r\n    public void lock() {\r\n        isLocked = true;\r\n    }\r\n\r\n\r\n    public boolean isLocked() {\r\n        return isLocked;\r\n    }\r\n}
+===================================================================
+diff --git a/Main/src/TriviaMazeDoor.java b/Main/src/TriviaMazeDoor.java
+--- a/Main/src/TriviaMazeDoor.java	
++++ b/Main/src/TriviaMazeDoor.java	
+@@ -1,3 +1,4 @@
++
+ 
+ public class TriviaMazeDoor {
+ 

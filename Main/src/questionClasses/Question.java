@@ -1,6 +1,6 @@
 package questionClasses;
 
-public class Question {
+public abstract class Question {
 
     private final String questionText;
     private final String answerText;
@@ -10,13 +10,9 @@ public class Question {
         answerText = theAnswer;
     }
 
-    public String getQuestionText() {
-        return questionText;
-    }
+    public abstract String getQuestionText();
 
-    public String getCorrectAnswer() {
-        return answerText;
-    }
+    public abstract String getCorrectAnswer();
 
     public String getQuestion() {
         return questionText;

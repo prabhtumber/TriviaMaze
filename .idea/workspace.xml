@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added MCQ and TF question classes.">
-      <change beforePath="$PROJECT_DIR$/Main/questionClasses/QuestionAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/questionClasses/QuestionAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/TriviaMazeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/TriviaMazeDoor.java" afterDir="false" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Unversioned Files.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2024_9_24_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2024_9_24_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TriviaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -32,26 +36,43 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2cG2MBJzx1pdS7YR0hqpMAbvvAD" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,6 +88,9 @@
       <workItem from="1708493948682" duration="317000" />
       <workItem from="1708496532508" duration="9000" />
       <workItem from="1708497528650" duration="597000" />
+      <workItem from="1709575738860" duration="135000" />
+      <workItem from="1709575916483" duration="50000" />
+      <workItem from="1709575968308" duration="1471000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -134,7 +158,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="prabhBranch" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

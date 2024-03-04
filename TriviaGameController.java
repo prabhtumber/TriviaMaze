@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.Scanner;
-
+import TriviaMaze;
 import View.TriviaMazeDisplay;
+
 /**
  * Controller class for managing the game flow.
  */
@@ -16,9 +17,9 @@ public class GameController {
     /** Scanner object for user input. */
     private static final Scanner scanner = new Scanner(System.in);
     /** Display object for showing information to the user. */
-    private static final Display display = new Display();
+    private static final Display display;
     /** The game state. */
-    private TriviaMaze triviaMaze;
+    private static TriviaMaze triviaMaze;
 
     /**
      * Main method to start the game.
@@ -33,6 +34,7 @@ public class GameController {
      * Constructs a GameController object and initializes the game.
      */
     public GameController() {
+
         game = new Game();
     }
 
@@ -47,20 +49,20 @@ public class GameController {
     /**
      * Initializes the game.
      */
-//    public void initialize() {
-//        triviaMaze = new TriviaMaze();
-//        display.displayTitle();
-//        display.startIntroduction();
-//    }
+    public void initialize() {
+        triviaMaze = new TriviaMaze();
+        display.displayTitle();
+        display.startIntroduction();
+    }
 
     /**
      * Runs the main game loop.
      */
     public void run() {
-       // display.displayGameType();
+        display.displayGameType();
         startGame();
         boolean isActive = true;
-        // still have to finish this
+         still have to finish this
     }
 
     /**
@@ -73,12 +75,12 @@ public class GameController {
             userInput = scanner.nextLine();
             if (userInput.equalsIgnoreCase("new")) {
                 success = true;
-                //display.displayInstructions();
+                display.displayInstructions();
             } else if (userInput.equalsIgnoreCase("load")) {
                 if (loadSavedGame()) {
                     success = true;
                 } else {
-                    //display.displayInvalidInput();
+                    display.displayInvalidInput();
                 }
             }
         }
@@ -95,10 +97,10 @@ public class GameController {
             if (new File(SAVE_FILE_NAME).length() != 0) {
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 triviaMaze = (TriviaMaze) objectInputStream.readObject();
-               // display.displayFileLoadSuccess();
+                display.displayFileLoadSuccess();
                 success = true;
             } else {
-               // display.displayFileLoadFailed();
+                display.displayFileLoadFailed();
             }
         } catch (IOException e) {
             System.out.println("No saved file exists.");
@@ -140,7 +142,43 @@ public class GameController {
             }
         }
     }
-    /**
+private static void playTriviaGame() {
+    displayMaze();
+    displayRoom();
+    handlePlayersNextMove();
+}
+
+private static void displayMaze() {
+    myDisplay.showMazeMap(myMaze.toString());
+}
+
+private static void displayRoom() {
+    myDisplay.showRoomInfo(myMaze.getRoomDisplay());
+}
+private static boolean loadGame() {
+    boolean success = false;
+
+    try {
+        FileInputStream fileInputStream = new FileInputStream(GAME_FILE_PATH);
+
+        if (fileInputStream.available() > 0) {
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            myMaze = (TriviaMaze) objectInputStream.readObject();
+            myDisplay.showFileLoadSuccess();
+            success = true;
+        } else {
+            myDisplay.showFileLoadFailure();
+        }
+    } catch (IOException e) {
+        System.out.println("Error: No save file found.");
+    } catch (ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }
+
+    return success;
+}
+
+/**
      * Saves the current game state to a file.
      */
     private void saveGame() {
@@ -150,11 +188,126 @@ public class GameController {
             objectOutputStream.writeObject(triviaMaze);
             objectOutputStream.close();
             fileOutputStream.close();
-          //  display.displayFileSaveSuccess();
+            display.displayFileSaveSuccess();
         } catch (IOException e) {
-          //  display.displayFileSaveFailed();
+            display.displayFileSaveFailed();
         }
     }
-    
+
+private static void handlePlayersNextMove() {
+    myDisplay.showDirectionPrompt();
+    boolean validInput = false;
+    String playersMove;
+
+    while (!validInput) {
+        playersMove = myIn.nextLine().toLowerCase();
+
+        if (playersMove.matches("north|west|south|east")) {
+            if (attemptPlayerMovement(playersMove)) {
+                validInput = true;
+            }
+        } else if (playersMove.equals("menu")) {
+            handleGameMenu();
+            validInput = true;
+        } else if (playersMove.equals("help")) {
+            handleGameHelpMenu();
+            validInput = true;
+        } else {
+            myDisplay.showInvalidInputMessage();
+        }
+    }
+}
+
+private static boolean attemptPlayerMovement(String direction) {
+    return movePlayer(direction);
+}
+
+
+private static void handleGameMenu() {
+    boolean validInput = false;
+    myDisplay.showFileMenu();
+
+    while (!validInput) {
+        String userInput = myIn.nextLine().toLowerCase();
+
+        if (userInput.equals("save")) {
+            saveGame();
+            validInput = true;
+        } else if (userInput.equals("load")) {
+            loadGame();
+            validInput = true;
+        } else if (userInput.equals("exit")) {
+            closeInputScanner();
+            exitGame();
+        } else {
+            myDisplay.showInvalidInputMessage();
+        }
+    }
+}
+
+private static void closeInputScanner() {
+    myIn.close();
+}
+
+private static void exitGame() {
+    System.exit(0);
+}
+
+private static void displayGameHelpMenu() {
+    boolean validInput = false;
+    myDisplay.showHelpMenu();
+
+    while (!validInput) {
+        String userInput = myIn.nextLine().toLowerCase();
+
+        if (userInput.equals("instr")) {
+            myDisplay.showInstructions();
+            validInput = true;
+        } else if (userInput.equals("about")) {
+            myDisplay.showGameInfo();
+            validInput = true;
+        } else {
+            myDisplay.showInvalidInputMessage();
+        }
+    }
+}
+
+
+private static boolean movePlayer(final String direction) {
+    boolean success = false;
+
+    // Attempt to move the player in the specified direction
+    myMaze.setCurrentDoor(direction);
+
+    // Check if the movement is valid
+    if (myMaze.canMove()) {
+        success = true;
+
+        // If the door is locked, prompt the player with a question
+        if (myMaze.isDoorLocked()) {
+            myDisplay.displayQuestion(myMaze.getDoorQuestion());
+            String playerAnswer = myIn.nextLine();
+
+            // Check if the player's answer unlocks the door
+            if (myMaze.checkPlayerAnswer(playerAnswer)) {
+                // Unlock the door and move the player
+                myMaze.unlockDoor();
+                myMaze.movePlayer(direction);
+                myDisplay.displayMessage("Correct! You unlocked the door and moved forward.");
+            } else {
+                // Display an incorrect message and the correct answer
+                myDisplay.displayMessage("Incorrect! The correct answer was: " + myMaze.getDoorAnswer());
+            }
+        } else {
+            // Move the player forward since the door is not locked
+            myMaze.movePlayer(direction);
+            myDisplay.displayMessage("You moved forward.");
+        }
+    } else {
+        // Display a message indicating the direction is invalid
+        myDisplay.displayMessage("Invalid direction! Please choose a different direction.");
+    }
+    return success;
+    }
 }
 

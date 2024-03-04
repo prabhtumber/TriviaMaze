@@ -1,131 +1,156 @@
-import java.util.Random;
+import java.io.Serializable;
 
-/**
- * Represents a trivia maze game.
- */
-public class TriviaMaze {
-    /** The x-coordinate of the player's position. */
-    private int playerXCoordinate;
-    /** The y-coordinate of the player's position. */
-    private int playerYCoordinate;
-    /** The size of the maze. */
+public class TriviaMaze implements Serializable {
+    private static final long serialVersionUID = -5203829590803086033L;
+
+    private int playerPosX;
+    private int playerPosY;
+    private final TriviaRoom[][] mazeLayout;
     private static final int MAZE_SIZE = 4;
-    /** The cells composing the maze. */
-    private final Cell[][] mazeCells;
+    private TriviaDoor currentDoor;
 
-    /**
-     * Constructs a new TriviaMaze object.
-     */
     public TriviaMaze() {
-        playerXCoordinate = 0;
-        playerYCoordinate = 0;
-        mazeCells = new Cell[MAZE_SIZE][MAZE_SIZE];
-        generateMaze();
+        playerPosX = 0;
+        playerPosY = 0;
+        mazeLayout = new TriviaRoom[MAZE_SIZE][MAZE_SIZE];
+        initializeMaze();
     }
 
-    /**
-     * Generates the maze cells.
-     */
-    public void generateMaze() {
-        Random random = new Random();
+    public void initializeMaze() {
         for (int x = 0; x < MAZE_SIZE; x++) {
             for (int y = 0; y < MAZE_SIZE; y++) {
-                boolean hasNorthDoor = y > 0;
-                boolean hasWestDoor = x > 0;
-                boolean hasEastDoor = x < MAZE_SIZE - 1;
-                boolean hasSouthDoor = y < MAZE_SIZE - 1;
-                mazeCells[x][y] = new Cell(hasNorthDoor, hasWestDoor, hasEastDoor, hasSouthDoor);
+                TriviaDoor north = null;
+                TriviaDoor west = null;
+                TriviaDoor east = new TriviaDoor();
+                TriviaDoor south = new TriviaDoor();
+                if (x > 0) {
+                    north = mazeLayout[x - 1][y].getDoor("south");
+                }
+                if (y > 0) {
+                    west = mazeLayout[x][y - 1].getDoor("east");
+                }
+                mazeLayout[x][y] = new TriviaRoom(x, y, north, west, south, east);
             }
         }
     }
 
-    /**
-     * Moves the player in the specified direction.
-     * @param direction The direction in which the player wants to move.
-     */
-    public void movePlayer(final String direction) {
+    public TriviaRoom[][] getMazeLayout() {
+        return mazeLayout;
+    }
+
+    public int[] getPlayerPosition() {
+        int[] position = {playerPosX, playerPosY};
+        return position;
+    }
+
+    public void setPlayerPosition(int x, int y) {
+        playerPosY = y;
+        playerPosX = x;
+    }
+
+    public boolean isGameCompleted() {
+        return playerPosX == MAZE_SIZE - 1 && playerPosY == MAZE_SIZE - 1;
+    }
+
+    public void setCurrentDoor(String direction) {
+        currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
+    }
+
+    public boolean canMove() {
+        return currentDoor != null && !currentDoor.isLockedForever();
+    }
+
+    public boolean isDoorLocked() {
+        return currentDoor.isLocked();
+    }
+
+    public boolean isDoorPermanentlyLocked() {
+        return currentDoor.isLockedForever();
+    }
+
+    public String getQuestionForDoor() {
+        return currentDoor.getQuestion();
+    }
+
+    public String getAnswerForDoor() {
+        return currentDoor.getAnswer();
+    }
+
+    public void evaluatePlayerAnswer(String answer) {
+        currentDoor.answer(answer);
+    }
+
+    public String getRoomInfo() {
+        return mazeLayout[playerPosX][playerPosY].toString();
+    }
+
+    public void movePlayer(String direction) {
         switch (direction) {
-            case "north" -> {
-                if (playerYCoordinate > 0) {
-                    playerYCoordinate--;
-                }
-            }
-            case "west" -> {
-                if (playerXCoordinate > 0) {
-                    playerXCoordinate--;
-                }
-            }
-            case "south" -> {
-                if (playerYCoordinate < MAZE_SIZE - 1) {
-                    playerYCoordinate++;
-                }
-            }
-            case "east" -> {
-                if (playerXCoordinate < MAZE_SIZE - 1) {
-                    playerXCoordinate++;
-                }
-            }
+            case "north" -> playerPosX--;
+            case "west" -> playerPosY--;
+            case "south" -> playerPosX++;
+            case "east" -> playerPosY++;
         }
     }
 
-    /**
-     * Checks if the game is won.
-     * @return true if the game is won, otherwise false.
-     */
-    public boolean isGameWon() {
-        return playerXCoordinate == MAZE_SIZE - 1 && playerYCoordinate == MAZE_SIZE - 1;
+    public boolean hasPossiblePath() {
+        for (TriviaRoom[] roomArray : mazeLayout) {
+            for (TriviaRoom room : roomArray) {
+                room.markVisited(false);
+            }
+        }
+        return explore(playerPosX, playerPosY);
     }
 
-    /**
-     * Generates a string representation of the maze.
-     * @return The string representation of the maze.
-     */
+    private boolean explore(int x, int y) {
+        boolean success = false;
+        if (isValidMove(x, y)) {
+            mazeLayout[x][y].markVisited(true);
+            if (isExitReached(x, y)) {
+                return true;
+            }
+            if (canMove(mazeLayout[x][y].getDoor("north"))) {
+                success = explore(x - 1, y);
+            }
+            if (!success && canMove(mazeLayout[x][y].getDoor("west"))) {
+                success = explore(x, y - 1);
+            }
+            if (!success && canMove(mazeLayout[x][y].getDoor("south"))) {
+                success = explore(x + 1, y);
+            }
+            if (!success && canMove(mazeLayout[x][y].getDoor("east"))) {
+                success = explore(x, y + 1);
+            }
+        }
+        return success;
+    }
+
+    private boolean isExitReached(int x, int y) {
+        return x == mazeLayout.length - 1 && y == mazeLayout[x].length - 1;
+    }
+
+    private boolean isValidMove(int row, int col) {
+        return row >= 0 && row < MAZE_SIZE && col >= 0 && col < MAZE_SIZE && !(mazeLayout[row][col].visited());
+    }
+
     @Override
     public String toString() {
-        StringBuilder mazeRepresentation = new StringBuilder();
+        StringBuilder mazeString = new StringBuilder();
         for (int i = 0; i < MAZE_SIZE; i++) {
-            mazeRepresentation.append("\n\t\t");
+            mazeString.append("\n\t\t");
             for (int j = 0; j < MAZE_SIZE; j++) {
-                if (i == 0 && j == 0 && !(playerXCoordinate == i && playerYCoordinate == j)) {
-                    mazeRepresentation.append("|ST|");
-                } else if (playerXCoordinate == i && playerYCoordinate == j) {
-                    mazeRepresentation.append("|PL|");
+                if (i == 0 && j == 0 && !(playerPosX == i && playerPosY == j)) {
+                    mazeString.append("|ST|");
+                } else if (playerPosX == i && playerPosY == j) {
+                    mazeString.append("|PL|");
                 } else if (i == MAZE_SIZE - 1 && j == MAZE_SIZE - 1) {
-                    mazeRepresentation.append("|ED|");
+                    mazeString.append("|ED|");
                 } else {
-                    mazeRepresentation.append("|RM|");
+                    mazeString.append("|RM|");
                 }
             }
         }
-        mazeRepresentation.append('\n');
-        return mazeRepresentation.toString();
-    }
-
-    /**
-     * Represents a cell in the maze.
-     */
-    private static class Cell {
-        /** Whether the cell has a north door. */
-        private final boolean hasNorthDoor;
-        /** Whether the cell has a west door. */
-        private final boolean hasWestDoor;
-        /** Whether the cell has an east door. */
-        private final boolean hasEastDoor;
-        /** Whether the cell has a south door. */
-        private final boolean hasSouthDoor;
-
-        /**
-         * Constructs a new Cell object.
-         * @param hasNorthDoor Whether the cell has a north door.
-         * @param hasWestDoor Whether the cell has a west door.
-         * @param hasEastDoor Whether the cell has an east door.
-         * @param hasSouthDoor Whether the cell has a south door.
-         */
-        public Cell(boolean hasNorthDoor, boolean hasWestDoor, boolean hasEastDoor, boolean hasSouthDoor) {
-            this.hasNorthDoor = hasNorthDoor;
-            this.hasWestDoor = hasWestDoor;
-            this.hasEastDoor = hasEastDoor;
-            this.hasSouthDoor = hasSouthDoor;
-        }
+        mazeString.append('\n');
+        return mazeString.toString();
     }
 }

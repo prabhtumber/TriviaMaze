@@ -18,10 +18,6 @@ public class TriviaMazeMain implements Serializable {
         initializeMaze();
     }
 
-    public TriviaMazeMain(TriviaMazeRoom[][] mazeLayout) {
-        this.mazeLayout = mazeLayout;
-    }
-
     public void initializeMaze() {
         for (int x = 0; x < MAZE_SIZE; x++) {
             for (int y = 0; y < MAZE_SIZE; y++) {
@@ -61,17 +57,20 @@ public class TriviaMazeMain implements Serializable {
     public void setCurrentDoor(String direction) {
         currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
     }
+    private boolean canMove(final TriviaMazeDoor theDoor) {
+        return theDoor != null && !theDoor.isMyDoorLockedPermanent();
+    }
 
     public boolean canMove() {
-        return currentDoor != null && !currentDoor.isLockedForever();
+        return currentDoor != null && !currentDoor.isMyDoorLockedPermanent();
     }
 
     public boolean isDoorLocked() {
-        return currentDoor.isLocked();
+        return currentDoor.isMyDoorLocked();
     }
 
     public boolean isDoorPermanentlyLocked() {
-        return currentDoor.isLockedForever();
+        return currentDoor.isMyDoorLockedPermanent();
     }
 
     public String getQuestionForDoor() {
@@ -79,11 +78,11 @@ public class TriviaMazeMain implements Serializable {
     }
 
     public String getAnswerForDoor() {
-        return currentDoor.getAnswer();
+        return currentDoor.getQuestionAnswer();
     }
 
     public void evaluatePlayerAnswer(String answer) {
-        currentDoor.answer(answer);
+        currentDoor.isRightAnswer(answer);
     }
 
     public String getRoomInfo() {

@@ -4,19 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Fixed bugs in controller.">
-      <change beforePath="$PROJECT_DIR$/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriviaMaze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Fixed more bugs.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TRIVIAMAZE_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/questionClasses.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/TriviaMazeQuestionDatabase.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/sqlite-jdbc-3.45.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/TriviaMaze/srs_template.doc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/TrueFalseQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/TrueFalseQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TriviaMaze.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +120,7 @@
       <workItem from="1708497528650" duration="597000" />
       <workItem from="1709575738860" duration="135000" />
       <workItem from="1709575916483" duration="50000" />
-      <workItem from="1709575968308" duration="15028000" />
+      <workItem from="1709575968308" duration="18174000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -173,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709577490745</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed more bugs.">
+      <created>1709670539998</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709670539998</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +221,7 @@
     <MESSAGE value="Added Question abstract class for the trivia questions" />
     <MESSAGE value="Added MCQ and TF question classes." />
     <MESSAGE value="Fixed bugs in controller." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in controller." />
+    <MESSAGE value="Fixed more bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed more bugs." />
   </component>
 </project>

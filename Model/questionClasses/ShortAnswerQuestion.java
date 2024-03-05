@@ -1,4 +1,4 @@
-
+package Model.questionClasses;
 public class ShortAnswerQuestion extends Question {
     public ShortAnswerQuestion(final String theQuestion, final String theAnswer) {
         super(theQuestion, theAnswer);

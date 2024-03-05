@@ -1,27 +1,60 @@
 package Model;
+import java.util.Locale;
 
 public class TriviaMazeRoom {
-    private enum Direction {
-        NORTH, WEST, SOUTH, EAST
-    }
 
-    private final TriviaMazeDoor[] myDoors = new TriviaMazeDoor[4];
+    /**
+     * A static int that hold the north location.
+     */
+    private static final int NORTH = 0;
+
+    /**
+     * A static int that hold the west location.
+     */
+    private static final int WEST = 1;
+
+    /**
+     * A static int that hold the south location.
+     */
+    private static final int SOUTH = 2;
+
+    /**
+     * A static int that hold the east location.
+     */
+    private static final int EAST = 3;
+    private final TriviaMazeDoor[] myDoors;
     private boolean myHasVisited;
 
-    public TriviaMazeRoom(TriviaMazeDoor directionNorth, TriviaMazeDoor directionWest,
-            TriviaMazeDoor directionSouth, TriviaMazeDoor directionEast) {
+    public TriviaMazeRoom(final int theRow, final int theCol, final TriviaMazeDoor theNorth, final TriviaMazeDoor theWest,
+                          final TriviaMazeDoor theSouth, final TriviaMazeDoor theEast) {
         myHasVisited = false;
-        myDoors[Direction.NORTH.ordinal()] = directionNorth;
-        myDoors[Direction.WEST.ordinal()] = directionWest;
-        myDoors[Direction.SOUTH.ordinal()] = directionSouth;
-        myDoors[Direction.EAST.ordinal()] = directionEast;
+        myDoors = new TriviaMazeDoor[4];
+        if (theRow >= 0 && theRow < myDoors.length && theCol < myDoors.length - 1) {
+            myDoors[EAST] = theEast;
+        }
+        if (theCol >= 0 && theCol < myDoors.length && theRow < myDoors.length - 1) {
+            myDoors[SOUTH] = theSouth;
+        }
+        if (theCol > 0 && theCol < myDoors.length && theRow < myDoors.length) {
+            myDoors[WEST] = theWest;
+        }
+        if (theRow > 0 && theRow < myDoors.length && theCol < myDoors.length) {
+            myDoors[NORTH] = theNorth;
+        }
     }
 
-    public TriviaMazeDoor getDoor(Direction direction) {
-        return myDoors[direction.ordinal()];
+    public TriviaMazeDoor getDoor(final String theDirection) {
+        return switch (theDirection.toLowerCase(Locale.ENGLISH)) {
+            case "north" -> myDoors[NORTH];
+            case "west" -> myDoors[WEST];
+            case "south" -> myDoors[SOUTH];
+            case "east" -> myDoors[EAST];
+            default -> null;
+        };
     }
 
     public boolean visited() {
+
         return myHasVisited;
     }
 
@@ -56,7 +89,6 @@ public class TriviaMazeRoom {
                              ----
                             SOUTH
                 ------------------------------
-                """, doorStates[Direction.NORTH.ordinal()], doorStates[Direction.WEST.ordinal()],
-                doorStates[Direction.EAST.ordinal()], doorStates[Direction.SOUTH.ordinal()]);
+                """, doorStates[0], doorStates[1], doorStates[3],doorStates[2]);
     }
 }

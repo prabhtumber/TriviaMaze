@@ -1,6 +1,6 @@
 package Model;
 
-import questionClasses.*;
+import Model.questionClasses.*;
 
 public class TriviaMazeDoor {
 

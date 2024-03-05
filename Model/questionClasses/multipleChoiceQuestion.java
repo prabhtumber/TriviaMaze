@@ -1,4 +1,4 @@
-
+package Model.questionClasses;
 public class multipleChoiceQuestion extends Question {
 
     public multipleChoiceQuestion(final String theQuestion, final String theAnswer) {

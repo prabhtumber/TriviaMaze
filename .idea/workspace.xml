@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Unversioned Files.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2024_9_24_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_4_2024_9_24_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Fixed bugs in controller.">
+      <change beforePath="$PROJECT_DIR$/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriviaMaze.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/TriviaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/questionClasses/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/questionClasses/TrueFalseQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/TrueFalseQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TriviaMaze.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,18 +56,31 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze",
+    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze/sqlite-jdbc-3.45.1.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="TriviaMainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.TriviaMainController" />
+      <module name="TriviaMaze" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,6 +92,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TriviaMainController" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,7 +115,7 @@
       <workItem from="1708497528650" duration="597000" />
       <workItem from="1709575738860" duration="135000" />
       <workItem from="1709575916483" duration="50000" />
-      <workItem from="1709575968308" duration="1471000" />
+      <workItem from="1709575968308" duration="15028000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -141,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708427695638</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed bugs in controller.">
+      <created>1709577490745</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709577490745</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +208,7 @@
     <MESSAGE value="Made slight changes to both classes." />
     <MESSAGE value="Added Question abstract class for the trivia questions" />
     <MESSAGE value="Added MCQ and TF question classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added MCQ and TF question classes." />
+    <MESSAGE value="Fixed bugs in controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs in controller." />
   </component>
 </project>

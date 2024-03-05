@@ -1,4 +1,4 @@
-package questionClasses;
+package Model.questionClasses;
 
 public class TrueFalseQuestion extends Question {
 

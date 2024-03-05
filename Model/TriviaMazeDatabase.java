@@ -5,8 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Model.questionClasses.*;
 import org.sqlite.SQLiteDataSource;
-import questionClasses.*;
+
 import java.util.Random;
 
 public class TriviaMazeDatabase {

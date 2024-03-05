@@ -1,3 +1,5 @@
+package Model;
+import java.io.Serial;
 import java.io.Serializable;
 
 public class TriviaMazeMain implements Serializable {
@@ -5,36 +7,40 @@ public class TriviaMazeMain implements Serializable {
 
     private int playerPosX;
     private int playerPosY;
-    private final TriviaRoom[][] mazeLayout;
+    private final TriviaMazeRoom[][] mazeLayout;
     private static final int MAZE_SIZE = 4;
-    private TriviaDoor currentDoor;
+    private TriviaMazeDoor currentDoor;
 
-    public TriviaMaze() {
+    public TriviaMazeMain() {
         playerPosX = 0;
         playerPosY = 0;
-        mazeLayout = new TriviaRoom[MAZE_SIZE][MAZE_SIZE];
+        mazeLayout = new TriviaMazeRoom[MAZE_SIZE][MAZE_SIZE];
         initializeMaze();
+    }
+
+    public TriviaMazeMain(TriviaMazeRoom[][] mazeLayout) {
+        this.mazeLayout = mazeLayout;
     }
 
     public void initializeMaze() {
         for (int x = 0; x < MAZE_SIZE; x++) {
             for (int y = 0; y < MAZE_SIZE; y++) {
-                TriviaDoor north = null;
-                TriviaDoor west = null;
-                TriviaDoor east = new TriviaDoor();
-                TriviaDoor south = new TriviaDoor();
+                TriviaMazeDoor north = null;
+                TriviaMazeDoor west = null;
+                TriviaMazeDoor east = new TriviaMazeDoor();
+                TriviaMazeDoor south = new TriviaMazeDoor();
                 if (x > 0) {
                     north = mazeLayout[x - 1][y].getDoor("south");
                 }
                 if (y > 0) {
                     west = mazeLayout[x][y - 1].getDoor("east");
                 }
-                mazeLayout[x][y] = new TriviaRoom(x, y, north, west, south, east);
+                mazeLayout[x][y] = new TriviaMazeRoom(x, y, north, west, south, east);
             }
         }
     }
 
-    public TriviaRoom[][] getMazeLayout() {
+    public TriviaMazeRoom[][] getMazeLayout() {
         return mazeLayout;
     }
 
@@ -94,8 +100,8 @@ public class TriviaMazeMain implements Serializable {
     }
 
     public boolean hasPossiblePath() {
-        for (TriviaRoom[] roomArray : mazeLayout) {
-            for (TriviaRoom room : roomArray) {
+        for (TriviaMazeRoom[] roomArray : mazeLayout) {
+            for (TriviaMazeRoom room : roomArray) {
                 room.markVisited(false);
             }
         }

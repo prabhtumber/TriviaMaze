@@ -14,6 +14,7 @@ public class TriviaGameController {
      */
     private static final File GAME = new File("TriviaGameSaveFile.txt");
     private static final String MUSIC =  "music.wav";
+    private static Clip musicClip;
 
     /**
      * Scanner object to read user input.
@@ -75,28 +76,27 @@ public class TriviaGameController {
         new Thread(() -> {
             try {
                 Thread.sleep(3000);
-
                 File musicFile = new File(filepath);
                 if (!musicFile.exists()) {
                     System.err.println("Music file not found: " + filepath);
                     return;
                 }
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(musicFile);
-                Clip clip = AudioSystem.getClip();
-                clip.open(audioStream);
-                clip.start();
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
-            } catch (InterruptedException e) {
-                System.err.println("Music playback interrupted.");
-                e.printStackTrace();
-            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+                musicClip = AudioSystem.getClip();
+                musicClip.open(audioStream);
+                musicClip.start();
+                musicClip.loop(Clip.LOOP_CONTINUOUSLY);
+            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException | InterruptedException e) {
                 System.err.println("Error occurred while playing the music file.");
                 e.printStackTrace();
             }
         }).start();
     }
-
-
+    public static void muteMusic() {
+        if (musicClip != null && musicClip.isRunning()) {
+            musicClip.stop();  // Stop the music
+        }
+    }
 
     /**
      * Handles the startup phase of the game, where the player chooses to start
@@ -193,8 +193,7 @@ public class TriviaGameController {
             } else if (playersMove.toLowerCase().matches("help")) {
                 gameHelpMenu();
                 validIn = true;
-            } else {
-                myDisplay.displayWrongIn();
+            } else {myDisplay.displayWrongIn();
             }
         }
     }
@@ -216,6 +215,10 @@ public class TriviaGameController {
             } else if (playersIn.toLowerCase().matches("exit")) {
                 myIn.close();
                 System.exit(0);
+            }else if (playersIn.toLowerCase().matches("mute")) {
+                muteMusic();  // Mute the music
+                validIn = false; // Stay in the menu
+                myDisplay.displayFileMenu(); // Re-display the menu
             } else {
                 myDisplay.displayWrongIn();
             }

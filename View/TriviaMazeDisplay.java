@@ -182,6 +182,7 @@ public class TriviaMazeDisplay {
                 System.out.println("\"Save\" to save game");
                 System.out.println("\"Load\" to load game");
                 System.out.println("\"Exit\" to exit game");
+                System.out.println("\"Mute\" to mute the music");
         }
 
         public void displayHelpMenu() {

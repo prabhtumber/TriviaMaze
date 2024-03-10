@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added music when game runs.">
+      <change beforePath="$PROJECT_DIR$/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriviaMaze.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_45_1_01.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TriviaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/slf4j_api_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/sqlite_jdbc_3_45_1_01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/pom.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +43,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2cG2MBJzx1pdS7YR0hqpMAbvvAD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -44,17 +56,20 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.TriviaMainController.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/prabh/IdeaProjects/TriviaMaze/slf4j-api-1.7.36.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -69,7 +84,7 @@
   </component>
   <component name="RunManager">
     <configuration name="TriviaMainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Controller.TriviaMainController" />
       <module name="TriviaMaze" />
@@ -100,6 +115,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-be841094" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-221dcadf" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -124,6 +147,9 @@
       <workItem from="1710031343608" duration="5417000" />
       <workItem from="1710037552886" duration="1153000" />
       <workItem from="1710038804383" duration="3131000" />
+      <workItem from="1710050330996" duration="1838000" />
+      <workItem from="1710055453082" duration="22000" />
+      <workItem from="1710097742507" duration="1372000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>

@@ -2,37 +2,32 @@ package Controller;
 
 import Model.TriviaMazeMain;
 import View.TriviaMazeDisplay;
-
 import java.io.*;
 import java.util.Scanner;
 import javax.sound.sampled.*;
 
+/**
+ * The controller class for the Trivia Maze game. It controls the flow of the game,
+ * manages user input and interactions between the model and the view.
+ */
 public class TriviaGameController {
 
-    /**
-     * The file used to save and load the game state.
-     */
+    /** File to store the game state */
     private static final File GAME = new File("TriviaGameSaveFile.txt");
-    private static final String MUSIC =  "music.wav";
+    /** Music file path */
+    private static final String MUSIC = "music.wav";
+    /** Clip for playing music */
     private static Clip musicClip;
-
-    /**
-     * Scanner object to read user input.
-     */
+    /** Scanner for user input */
     private static final Scanner myIn = new Scanner(System.in);
-
-    /**
-     * The display object responsible for showing information to the user.
-     */
+    /** Instance of TriviaMazeDisplay */
     private static TriviaMazeDisplay myDisplay;
-
-    /**
-     * The TriviaMaze object representing the game state.
-     */
+    /** Instance of TriviaMazeMain */
     private static TriviaMazeMain myMaze;
 
     /**
-     * Constructs a GameController object and initializes the game.
+     * Constructor for TriviaGameController.
+     * Initializes the game and starts the game loop.
      */
     protected TriviaGameController() {
         initialization();
@@ -40,18 +35,19 @@ public class TriviaGameController {
     }
 
     /**
-     * Initializes the game by creating a new TriviaMaze and Display.
+     * Initializes the game by creating instances of TriviaMazeMain and TriviaMazeDisplay.
+     * Also displays the game title and instructions.
      */
     private static void initialization() {
         myMaze = new TriviaMazeMain();
         myDisplay = new TriviaMazeDisplay();
         myDisplay.displayTitle();
         myDisplay.MazeInstruction();
-
     }
 
     /**
-     * The main game loop that continues until the player wins or loses.
+     * Main game loop controlling the flow of the game.
+     * Checks game completion and handles player movements.
      */
     private static void triviaMazeLoop() {
         myDisplay.DisplayGameType();
@@ -72,6 +68,10 @@ public class TriviaGameController {
         }
     }
 
+    /**
+     * Plays music in a separate thread.
+     * @param filepath The path of the music file to be played.
+     */
     public static void playMusic(String filepath) {
         new Thread(() -> {
             try {
@@ -92,6 +92,10 @@ public class TriviaGameController {
             }
         }).start();
     }
+
+    /**
+     * Stops the currently playing music.
+     */
     public static void muteMusic() {
         if (musicClip != null && musicClip.isRunning()) {
             musicClip.stop();  // Stop the music
@@ -99,8 +103,7 @@ public class TriviaGameController {
     }
 
     /**
-     * Handles the startup phase of the game, where the player chooses to start
-     * a new game or load a saved one.
+     * Starts a new game or loads a saved game based on user input.
      */
     private static void startupGame() {
         boolean success = false;
@@ -123,9 +126,8 @@ public class TriviaGameController {
     }
 
     /**
-     * Loads a saved game from the specified file.
-     *
-     * @return true if the loading is successful, false otherwise.
+     * Loads a saved game from the file.
+     * @return True if the game is loaded successfully, false otherwise.
      */
     private static boolean loadGame() {
         boolean success = false;
@@ -148,13 +150,12 @@ public class TriviaGameController {
     }
 
     /**
-     * Saves the current game state to the specified file.
+     * Saves the current game state to the file.
      */
     private static void saveGame() {
         try {
             FileOutputStream file = new FileOutputStream(GAME);
             ObjectOutputStream out = new ObjectOutputStream(file);
-
             out.writeObject(myMaze);
             out.close();
             file.close();
@@ -165,8 +166,8 @@ public class TriviaGameController {
     }
 
     /**
-     * Displays the current state of the game and handles player
-     * input during the game.
+     * Executes the main gameplay logic.
+     * Displays the maze, room information, and handles player movements.
      */
     private static void triviaGame() {
         myDisplay.displayMaze(myMaze.toString());
@@ -175,7 +176,7 @@ public class TriviaGameController {
     }
 
     /**
-     * Gets the player's next move and checks if the input is valid.
+     * Prompts the player for their next move and handles it accordingly.
      */
     private static void playersNextMove() {
         myDisplay.displayDirection();
@@ -193,13 +194,14 @@ public class TriviaGameController {
             } else if (playersMove.toLowerCase().matches("help")) {
                 gameHelpMenu();
                 validIn = true;
-            } else {myDisplay.displayWrongIn();
+            } else {
+                myDisplay.displayWrongIn();
             }
         }
     }
 
     /**
-     * Displays the game menu and handles player input for menu options.
+     * Displays the game menu and handles user choices.
      */
     private static void gameMenu() {
         boolean validIn = false;
@@ -215,7 +217,7 @@ public class TriviaGameController {
             } else if (playersIn.toLowerCase().matches("exit")) {
                 myIn.close();
                 System.exit(0);
-            }else if (playersIn.toLowerCase().matches("mute")) {
+            } else if (playersIn.toLowerCase().matches("mute")) {
                 muteMusic();  // Mute the music
                 validIn = false; // Stay in the menu
                 myDisplay.displayFileMenu(); // Re-display the menu
@@ -226,7 +228,7 @@ public class TriviaGameController {
     }
 
     /**
-     * Displays the help menu and handles player input for help options.
+     * Displays the help menu and handles user choices.
      */
     private static void gameHelpMenu() {
         boolean validIn = false;
@@ -246,10 +248,9 @@ public class TriviaGameController {
     }
 
     /**
-     * Moves the player based on the provided direction and handles door interactions.
-     *
+     * Handles player movement within the maze.
      * @param theDirection The direction in which the player wants to move.
-     * @return true if the player successfully moved, false otherwise.
+     * @return True if the movement is successful, false otherwise.
      */
     private static boolean playerMovement(final String theDirection) {
         boolean success = false;
@@ -277,4 +278,3 @@ public class TriviaGameController {
         return success;
     }
 }
-

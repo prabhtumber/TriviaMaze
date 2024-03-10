@@ -6,10 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.questionClasses.*;
-
 import Model.questionClasses.Question;
 import org.sqlite.SQLiteDataSource;
-
 import java.util.Random;
 
 public class TriviaMazeDatabase implements Serializable {

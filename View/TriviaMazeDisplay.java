@@ -26,22 +26,22 @@ public class TriviaMazeDisplay {
         public void MazeInstruction() {
                 System.out.println("\n");
                 System.out.println(
-                                "In this game, you will navigate through a maze of rooms, each separated by doors with trivia questions.");
+                        "In this game, you will navigate through a maze of rooms, each separated by doors with trivia questions.");
                 System.out.println(
-                                "Each door in the maze has a unique trivia question that you must answer to proceed.");
+                        "Each door in the maze has a unique trivia question that you must answer to proceed.");
                 System.out.println(
-                                "Answering a question correctly will unlock the door, allowing you to move to the next room.");
+                        "Answering a question correctly will unlock the door, allowing you to move to the next room.");
                 System.out.println(
-                                "Be careful! Answering incorrectly will lock the door forever, blocking that path.");
+                        "Be careful! Answering incorrectly will lock the door forever, blocking that path.");
                 System.out.println(
-                                "Your objective is to successfully navigate through the maze by answering all questions correctly.");
+                        "Your objective is to successfully navigate through the maze by answering all questions correctly.");
                 System.out.println(
-                                "If you lock all doors leading to the exit, the game is over, and you will have to start again.");
+                        "If you lock all doors leading to the exit, the game is over, and you will have to start again.");
                 System.out.println(
-                                "Use commands like 'go north', 'go south', 'go east', and 'go west' to move through the maze.");
+                        "Use commands like 'go north', 'go south', 'go east', and 'go west' to move through the maze.");
                 System.out.println("To answer a question, simply type your answer when prompted. Good luck!");
                 System.out.println(
-                                "Remember, each choice could be your step towards victory or a dead end. Choose wisely!");
+                        "Remember, each choice could be your step towards victory or a dead end. Choose wisely!");
                 System.out.println("Let's begin the adventure! Can you clear the maze and emerge victorious?");
 
         }
@@ -98,7 +98,7 @@ public class TriviaMazeDisplay {
                 System.out.println();
                 System.out.println("In the TriviaRoom display:");
                 System.out.println(
-                                "|XX| means you can't go through either because it's a wall or door is locked forever");
+                        "|XX| means you can't go through either because it's a wall or door is locked forever");
                 System.out.println("|OP| means you can access that door since it was unlocked");
                 System.out.println("|LK| means the door is locked but is accessible if Question is answered correctly");
                 System.out.println();
@@ -122,15 +122,15 @@ public class TriviaMazeDisplay {
                 System.out.println("CONGRATULATIONS! YOU WON!");
                 System.out.println();
                 System.out.println(
-                                """
+                        """
 
-                                                ██████████████████████████████████████████████
-                                                █▄─█─▄█─▄▄─█▄─██─▄███▄─█▀▀▀█─▄█─▄▄─█▄─▀█▄─▄█░█
-                                                ██▄─▄██─██─██─██─█████─█─█─█─██─██─██─█▄▀─██▄█
-                                                ▀▀▄▄▄▀▀▄▄▄▄▀▀▄▄▄▄▀▀▀▀▀▄▄▄▀▄▄▄▀▀▄▄▄▄▀▄▄▄▀▀▄▄▀▄▀
+                                        ██████████████████████████████████████████████
+                                        █▄─█─▄█─▄▄─█▄─██─▄███▄─█▀▀▀█─▄█─▄▄─█▄─▀█▄─▄█░█
+                                        ██▄─▄██─██─██─██─█████─█─█─█─██─██─██─█▄▀─██▄█
+                                        ▀▀▄▄▄▀▀▄▄▄▄▀▀▄▄▄▄▀▀▀▀▀▄▄▄▀▄▄▄▀▀▄▄▄▄▀▄▄▄▀▀▄▄▀▄▀
 
 
-                                                                                        """);
+                                                                                """);
 
         }
 

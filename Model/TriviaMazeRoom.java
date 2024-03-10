@@ -87,7 +87,7 @@ public class TriviaMazeRoom implements Serializable {
                              ____
                              |%s|
                         ____ ---- ____
-                WEST  |%s|  PL  |%s|  EAST
+                WEST    |%s|  PL  |%s|  EAST
                         ---- ____ ----
                              |%s|
                              ----

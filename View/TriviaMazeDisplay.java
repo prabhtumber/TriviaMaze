@@ -24,6 +24,7 @@ public class TriviaMazeDisplay {
         }
 
         public void MazeInstruction() {
+                System.out.println("\n");
                 System.out.println(
                                 "In this game, you will navigate through a maze of rooms, each separated by doors with trivia questions.");
                 System.out.println(

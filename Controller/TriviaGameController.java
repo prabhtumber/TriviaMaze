@@ -5,7 +5,7 @@ import View.TriviaMazeDisplay;
 
 import java.io.*;
 import java.util.Scanner;
-
+import javax.sound.sampled.*;
 
 public class TriviaGameController {
 
@@ -13,6 +13,7 @@ public class TriviaGameController {
      * The file used to save and load the game state.
      */
     private static final File GAME = new File("TriviaGameSaveFile.txt");
+    private static final String MUSIC =  "music.wav";
 
     /**
      * Scanner object to read user input.
@@ -44,7 +45,8 @@ public class TriviaGameController {
         myMaze = new TriviaMazeMain();
         myDisplay = new TriviaMazeDisplay();
         myDisplay.displayTitle();
-        myDisplay.MazeIntro();
+        myDisplay.MazeInstruction();
+
     }
 
     /**
@@ -69,6 +71,33 @@ public class TriviaGameController {
         }
     }
 
+    public static void playMusic(String filepath) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+
+                File musicFile = new File(filepath);
+                if (!musicFile.exists()) {
+                    System.err.println("Music file not found: " + filepath);
+                    return;
+                }
+                AudioInputStream audioStream = AudioSystem.getAudioInputStream(musicFile);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
+            } catch (InterruptedException e) {
+                System.err.println("Music playback interrupted.");
+                e.printStackTrace();
+            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+                System.err.println("Error occurred while playing the music file.");
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+
+
     /**
      * Handles the startup phase of the game, where the player chooses to start
      * a new game or load a saved one.
@@ -81,9 +110,11 @@ public class TriviaGameController {
             if (userIn.equalsIgnoreCase("new")) {
                 success = true;
                 myDisplay.displayInstruction();
+                playMusic(MUSIC);
             } else if (userIn.equalsIgnoreCase("load")) {
                 if (loadGame()) {
                     success = true;
+                    playMusic(MUSIC);
                 } else {
                     myDisplay.displayWrongIn();
                 }

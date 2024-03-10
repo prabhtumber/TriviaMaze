@@ -4,25 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Fixed more bugs.">
-      <change beforePath="$PROJECT_DIR$/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriviaMaze.iml" afterDir="false" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added Serialization to the files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/TriviaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.Java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/ShortAnswerQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/questionClasses/multipleChoiceQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDoor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDoor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/ShortAnswerQuestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/ShortAnswerQuestion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/multipleChoiceQuestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/questionClasses/multipleChoiceQuestion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,26 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze/slf4j-api-1.7.36.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/prabh/IdeaProjects/TriviaMaze/slf4j-api-1.7.36.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\prabh\IdeaProjects\TriviaMaze" />
@@ -135,7 +131,9 @@
       <workItem from="1709701605770" duration="311000" />
       <workItem from="1709764596790" duration="1790000" />
       <workItem from="1710025064999" duration="895000" />
-      <workItem from="1710031343608" duration="5141000" />
+      <workItem from="1710031343608" duration="5417000" />
+      <workItem from="1710037552886" duration="1153000" />
+      <workItem from="1710038804383" duration="2569000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709673933280</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Serialization to the files.">
+      <created>1710036966395</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710036966395</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +249,8 @@
     <MESSAGE value="Added MCQ and TF question classes." />
     <MESSAGE value="Fixed bugs in controller." />
     <MESSAGE value="Fixed more bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed more bugs." />
+    <MESSAGE value="Added Serialization to the files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Serialization to the files." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

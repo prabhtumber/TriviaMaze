@@ -219,9 +219,15 @@ public class TriviaGameController {
                 System.exit(0);
             } else if (playersIn.toLowerCase().matches("mute")) {
                 muteMusic();  // Mute the music
-                validIn = false; // Stay in the menu
+                validIn = false;
                 myDisplay.displayFileMenu(); // Re-display the menu
-            } else {
+            }else if (playersIn.toLowerCase().matches("unmute")) {
+                playMusic(MUSIC);  // Mute the music
+                validIn = false;
+                myDisplay.displayFileMenu(); // Re-display the menu
+            }
+
+            else {
                 myDisplay.displayWrongIn();
             }
         }
@@ -235,7 +241,7 @@ public class TriviaGameController {
         myDisplay.displayHelpMenu();
         while (!validIn) {
             String playersIn = myIn.nextLine();
-            if (playersIn.toLowerCase().matches("instr")) {
+            if (playersIn.toLowerCase().matches("instruction")) {
                 myDisplay.displayInstruction();
                 validIn = true;
             } else if (playersIn.toLowerCase().matches("about")) {

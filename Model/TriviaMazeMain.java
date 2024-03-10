@@ -1,11 +1,9 @@
 package Model;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 public class TriviaMazeMain implements Serializable {
     private static final long serialVersionUID = 7609898967214411735L;
-
     private int playerPosX;
     private int playerPosY;
     private final TriviaMazeRoom[][] mazeLayout;
@@ -16,15 +14,10 @@ public class TriviaMazeMain implements Serializable {
         playerPosX = 0;
         playerPosY = 0;
         mazeLayout = new TriviaMazeRoom[MAZE_SIZE][MAZE_SIZE];
-        initializeMaze();
+        maze_Initialization();
     }
 
-    /**
-     * The `initializeMaze` function creates a maze layout by initializing rooms
-     * with doors connecting
-     * them in a grid pattern.
-     */
-    public void initializeMaze() {
+    public void maze_Initialization() {
         for (int x = 0; x < MAZE_SIZE; x++) {
             for (int y = 0; y < MAZE_SIZE; y++) {
                 TriviaMazeDoor north = null;
@@ -41,61 +34,47 @@ public class TriviaMazeMain implements Serializable {
             }
         }
     }
-
     public TriviaMazeRoom[][] getMazeLayout() {
         return mazeLayout;
     }
-
     public int[] getPlayerPosition() {
         int[] position = { playerPosX, playerPosY };
         return position;
     }
-
     public void setPlayerPosition(int x, int y) {
         playerPosY = y;
         playerPosX = x;
     }
-
     public boolean isGameCompleted() {
         return playerPosX == MAZE_SIZE - 1 && playerPosY == MAZE_SIZE - 1;
     }
-
     public void setCurrentDoor(String direction) {
         currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
     }
-
     private boolean canMove(final TriviaMazeDoor theDoor) {
         return theDoor != null && !theDoor.isMyDoorLockedPermanent();
     }
-
     public boolean canMove() {
         return currentDoor != null && !currentDoor.isMyDoorLockedPermanent();
     }
-
     public boolean isDoorLocked() {
         return currentDoor.isMyDoorLocked();
     }
-
     public boolean isDoorPermanentlyLocked() {
         return currentDoor.isMyDoorLockedPermanent();
     }
-
     public String getQuestionForDoor() {
         return currentDoor.getQuestion();
     }
-
     public String getAnswerForDoor() {
         return currentDoor.getQuestionAnswer();
     }
-
     public void evaluatePlayerAnswer(String answer) {
         currentDoor.isRightAnswer(answer);
     }
-
     public String getRoomInfo() {
         return mazeLayout[playerPosX][playerPosY].toString();
     }
-
     public void movePlayer(String direction) {
         switch (direction) {
             case "north" -> playerPosX--;
@@ -104,7 +83,6 @@ public class TriviaMazeMain implements Serializable {
             case "east" -> playerPosY++;
         }
     }
-
     public boolean hasPossiblePath() {
         for (TriviaMazeRoom[] roomArray : mazeLayout) {
             for (TriviaMazeRoom room : roomArray) {
@@ -113,7 +91,6 @@ public class TriviaMazeMain implements Serializable {
         }
         return explore(playerPosX, playerPosY);
     }
-
     private boolean explore(int x, int y) {
         boolean success = false;
         if (isValidMove(x, y)) {
@@ -136,15 +113,12 @@ public class TriviaMazeMain implements Serializable {
         }
         return success;
     }
-
     private boolean isExitReached(int x, int y) {
         return x == mazeLayout.length - 1 && y == mazeLayout[x].length - 1;
     }
-
     private boolean isValidMove(int row, int col) {
         return row >= 0 && row < MAZE_SIZE && col >= 0 && col < MAZE_SIZE && !(mazeLayout[row][col].visited());
     }
-
     @Override
     public String toString() {
         StringBuilder mazeString = new StringBuilder();

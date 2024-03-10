@@ -30,7 +30,7 @@ public class TriviaGameController {
      * Initializes the game and starts the game loop.
      */
     protected TriviaGameController() {
-        initialization();
+        initializeGame();
         triviaMazeLoop();
     }
 
@@ -38,7 +38,7 @@ public class TriviaGameController {
      * Initializes the game by creating instances of TriviaMazeMain and TriviaMazeDisplay.
      * Also displays the game title and instructions.
      */
-    private static void initialization() {
+    private static void initializeGame() {
         myMaze = new TriviaMazeMain();
         myDisplay = new TriviaMazeDisplay();
         myDisplay.displayTitle();
@@ -51,7 +51,7 @@ public class TriviaGameController {
      */
     private static void triviaMazeLoop() {
         myDisplay.DisplayGameType();
-        startupGame();
+        start_Game();
         boolean active = true;
         while (active) {
             if (!(myMaze.hasPossiblePath())) {
@@ -105,7 +105,7 @@ public class TriviaGameController {
     /**
      * Starts a new game or loads a saved game based on user input.
      */
-    private static void startupGame() {
+    private static void start_Game() {
         boolean success = false;
         String userIn;
         while (!success) {
@@ -115,7 +115,7 @@ public class TriviaGameController {
                 myDisplay.displayInstruction();
                 playMusic(MUSIC);
             } else if (userIn.equalsIgnoreCase("load")) {
-                if (loadGame()) {
+                if (load_Game()) {
                     success = true;
                     playMusic(MUSIC);
                 } else {
@@ -129,7 +129,7 @@ public class TriviaGameController {
      * Loads a saved game from the file.
      * @return True if the game is loaded successfully, false otherwise.
      */
-    private static boolean loadGame() {
+    private static boolean load_Game() {
         boolean success = false;
         try {
             FileInputStream file = new FileInputStream(GAME);
@@ -152,7 +152,7 @@ public class TriviaGameController {
     /**
      * Saves the current game state to the file.
      */
-    private static void saveGame() {
+    private static void save_Game() {
         try {
             FileOutputStream file = new FileOutputStream(GAME);
             ObjectOutputStream out = new ObjectOutputStream(file);
@@ -172,20 +172,20 @@ public class TriviaGameController {
     private static void triviaGame() {
         myDisplay.displayMaze(myMaze.toString());
         myDisplay.displayRoom(myMaze.getRoomInfo());
-        playersNextMove();
+        players_NextMove();
     }
 
     /**
      * Prompts the player for their next move and handles it accordingly.
      */
-    private static void playersNextMove() {
+    private static void players_NextMove() {
         myDisplay.displayDirection();
         boolean validIn = false;
         String playersMove;
         while (!validIn) {
             playersMove = myIn.nextLine();
             if (playersMove.toLowerCase().matches("north|west|south|east")) {
-                if (playerMovement(playersMove)) {
+                if (player_Movement(playersMove)) {
                     validIn = true;
                 }
             } else if (playersMove.toLowerCase().matches("menu")) {
@@ -209,10 +209,10 @@ public class TriviaGameController {
         while (!validIn) {
             String playersIn = myIn.nextLine();
             if (playersIn.toLowerCase().matches("save")) {
-                saveGame();
+                save_Game();
                 validIn = true;
             } else if (playersIn.toLowerCase().matches("load")) {
-                loadGame();
+                load_Game();
                 validIn = true;
             } else if (playersIn.toLowerCase().matches("exit")) {
                 myIn.close();
@@ -252,7 +252,7 @@ public class TriviaGameController {
      * @param theDirection The direction in which the player wants to move.
      * @return True if the movement is successful, false otherwise.
      */
-    private static boolean playerMovement(final String theDirection) {
+    private static boolean player_Movement(final String theDirection) {
         boolean success = false;
         myMaze.setCurrentDoor(theDirection);
         if (myMaze.canMove()) {

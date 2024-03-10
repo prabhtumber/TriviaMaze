@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added music when game runs.">
-      <change beforePath="$PROJECT_DIR$/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TriviaMaze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_7_36.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_45_1_01.xml" beforeDir="false" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added Java docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/TriviaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/TriviaMaze.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/slf4j_api_1_7_36.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/sqlite_jdbc_3_45_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/.idea/libraries/sqlite_jdbc_3_45_1_01.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaGameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +141,8 @@
       <workItem from="1710038804383" duration="3131000" />
       <workItem from="1710050330996" duration="1838000" />
       <workItem from="1710055453082" duration="22000" />
-      <workItem from="1710097742507" duration="1372000" />
+      <workItem from="1710097742507" duration="1664000" />
+      <workItem from="1710099728735" duration="667000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -235,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710041970530</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Java docs">
+      <option name="closed" value="true" />
+      <created>1710099407912</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710099407912</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +275,8 @@
     <MESSAGE value="Fixed more bugs." />
     <MESSAGE value="Added Serialization to the files." />
     <MESSAGE value="Added music when game runs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added music when game runs." />
+    <MESSAGE value="Added Java docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Java docs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

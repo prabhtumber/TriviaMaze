@@ -4,23 +4,23 @@ import java.awt.*;
 import java.io.Serializable;
 
 /**
- * The TriviaMainController class serves as the entry point for the trivia game application.
- * It initializes the game controller and starts the game by invoking the TriviaGameController class in the Event Dispatch Thread.
+ * The TriviaMainController class serves as the entry point for the Trivia Maze Game application.
+ * It initializes and runs the main game controller in the Event Dispatch Thread (EDT).
+ * This class is marked as final to prevent subclassing, and implements Serializable to allow instances
+ * of this class to be serialized.
  */
 public final class TriviaMainController implements Serializable {
 
     private static final long serialVersionUID = 1139818214227838601L;
 
     /**
-     * The main method serves as the entry point of the application.
-     * It starts the game by invoking the TriviaGameController class in the Event Dispatch Thread.
+     * Main entry point for the application.
+     * This method uses EventQueue.invokeLater to ensure that the Trivia game controller
+     * is initialized and executed on the Event Dispatch Thread, adhering to Swing best practices.
      *
-     * @param args command-line arguments (not used in this application)
+     * @param args Command line arguments, not used in this application.
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(TriviaGameController::new);
     }
 }
-
-
-

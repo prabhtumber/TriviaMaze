@@ -1,5 +1,10 @@
 package Model.questionClasses;
-public class ShortAnswerQuestion extends Question {
+
+import java.io.Serializable;
+
+public class ShortAnswerQuestion extends Question implements Serializable {
+    private static final long serialVersionUID = 569729474472871838L;
+
     public ShortAnswerQuestion(final String theQuestion, final String theAnswer) {
         super(theQuestion, theAnswer);
     }

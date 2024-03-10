@@ -46,11 +46,10 @@ public class TriviaMazeDisplay {
         }
 
         public void displayMaze(final String theMaze) {
-                System.out.println("\t\t\t  MAZE");
-                System.out.print("\t\t________________");
+                System.out.println("\t\t\t     MAZE");
+                System.out.print("--------------------------------------------");
                 System.out.print(theMaze);
-                System.out.println("\t\t----------------");
-                System.out.println("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\");
+                System.out.println("--------------------------------------------");
         }
 
         public void displayRoom(final String theDoor) {

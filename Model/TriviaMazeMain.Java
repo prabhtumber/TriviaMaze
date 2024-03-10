@@ -1,9 +1,10 @@
 package Model;
+
 import java.io.Serial;
 import java.io.Serializable;
 
 public class TriviaMazeMain implements Serializable {
-    private static final long serialVersionUID = -5203829590803086033L;
+    private static final long serialVersionUID = 7609898967214411735L;
 
     private int playerPosX;
     private int playerPosY;
@@ -18,6 +19,11 @@ public class TriviaMazeMain implements Serializable {
         initializeMaze();
     }
 
+    /**
+     * The `initializeMaze` function creates a maze layout by initializing rooms
+     * with doors connecting
+     * them in a grid pattern.
+     */
     public void initializeMaze() {
         for (int x = 0; x < MAZE_SIZE; x++) {
             for (int y = 0; y < MAZE_SIZE; y++) {
@@ -41,7 +47,7 @@ public class TriviaMazeMain implements Serializable {
     }
 
     public int[] getPlayerPosition() {
-        int[] position = {playerPosX, playerPosY};
+        int[] position = { playerPosX, playerPosY };
         return position;
     }
 
@@ -57,6 +63,7 @@ public class TriviaMazeMain implements Serializable {
     public void setCurrentDoor(String direction) {
         currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
     }
+
     private boolean canMove(final TriviaMazeDoor theDoor) {
         return theDoor != null && !theDoor.isMyDoorLockedPermanent();
     }
@@ -147,11 +154,11 @@ public class TriviaMazeMain implements Serializable {
                 if (i == 0 && j == 0 && !(playerPosX == i && playerPosY == j)) {
                     mazeString.append("|ST|");
                 } else if (playerPosX == i && playerPosY == j) {
-                    mazeString.append("|PL|");
+                    mazeString.append("| PL |");
                 } else if (i == MAZE_SIZE - 1 && j == MAZE_SIZE - 1) {
-                    mazeString.append("|ED|");
+                    mazeString.append("| ED |");
                 } else {
-                    mazeString.append("|RM|");
+                    mazeString.append("|Room|");
                 }
             }
         }

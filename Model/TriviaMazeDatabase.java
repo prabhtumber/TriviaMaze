@@ -1,17 +1,19 @@
 package Model;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import Model.questionClasses.*;
+
+import Model.questionClasses.Question;
 import org.sqlite.SQLiteDataSource;
 
 import java.util.Random;
 
-public class TriviaMazeDatabase {
-
+public class TriviaMazeDatabase implements Serializable {
+    private static final long serialVersionUID = 1887880497416979668L;
     public static Question getQuestion() {
         Random random = new Random();
 

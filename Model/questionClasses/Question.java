@@ -1,7 +1,10 @@
 package Model.questionClasses;
 
-public abstract class Question {
+import java.io.Serializable;
 
+public abstract class Question implements Serializable {
+
+    private static final long serialVersionUID =1724706615218001071L;
     private final String questionText;
     private final String answerText;
 

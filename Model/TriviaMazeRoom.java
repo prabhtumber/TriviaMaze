@@ -1,7 +1,9 @@
 package Model;
+import java.io.Serializable;
 import java.util.Locale;
 
-public class TriviaMazeRoom {
+public class TriviaMazeRoom implements Serializable {
+    private static final long serialVersionUID = 638649015203610635L;
 
     /**
      * A static int that hold the north location.
@@ -64,18 +66,20 @@ public class TriviaMazeRoom {
 
     @Override
     public String toString() {
-        String[] doorStates = new String[4];
+        String[] door = new String[4];
         for (int i = 0; i < myDoors.length; i++) {
             if (myDoors[i] == null) {
-                doorStates[i] = "XX";
-            } else if (myDoors[i].isMyDoorLocked() && !myDoors[i].isMyDoorLockedPermanent()) {
-                doorStates[i] = "LK";
+                door[i] = "XX";
+            } else if (myDoors[i].isMyDoorLocked() && !(myDoors[i].isMyDoorLockedPermanent())) {
+                door[i] = "LK";
             } else if (myDoors[i].isMyDoorLockedPermanent()) {
-                doorStates[i] = "XX";
+                door[i] = "XX";
             } else {
-                doorStates[i] = "OP";
+                door[i] = "OP";
             }
         }
+
+        // Build the room representation with even spacing
         return String.format("""
                              ROOM
                 ______________________________
@@ -83,12 +87,14 @@ public class TriviaMazeRoom {
                              ____
                              |%s|
                         ____ ---- ____
-                WEST    |%s|  PL  |%s|    EAST
+                WEST  |%s|  PL  |%s|  EAST
                         ---- ____ ----
                              |%s|
                              ----
                             SOUTH
                 ------------------------------
-                """, doorStates[0], doorStates[1], doorStates[3],doorStates[2]);
+                """,
+                door[0], door[1], door[3],door[2]);
+
     }
 }

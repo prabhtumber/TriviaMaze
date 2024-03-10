@@ -2,8 +2,10 @@ package Model;
 
 import Model.questionClasses.*;
 
-public class TriviaMazeDoor {
+import java.io.Serializable;
 
+public class TriviaMazeDoor implements Serializable {
+    private static final long serialVersionUID = 1335969823606736557L;
     private boolean myDoorLocked;
     private boolean myDoorLockedPermanent;
     private final Question myDoorQuestion;

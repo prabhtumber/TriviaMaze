@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added Java docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDoor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeDoor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +144,8 @@
       <workItem from="1710102951624" duration="3707000" />
       <workItem from="1710107047939" duration="3000" />
       <workItem from="1710107919504" duration="526000" />
+      <workItem from="1710108449842" duration="202000" />
+      <workItem from="1710127422925" duration="7540000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -258,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710105761200</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Java docs">
+      <option name="closed" value="true" />
+      <created>1710108635512</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710108635512</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

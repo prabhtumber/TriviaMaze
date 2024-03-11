@@ -1,81 +1,96 @@
 package Model;
+
 import java.io.Serializable;
 import java.util.Locale;
 
+/**
+ * Represents a room within the trivia maze game.
+ * Each room is connected to four other rooms in the North, South, East, and West directions.
+ * Each connection is represented by a door, which may be locked, unlocked, or permanently locked based on the game's progress.
+ */
 public class TriviaMazeRoom implements Serializable {
     private static final long serialVersionUID = 638649015203610635L;
 
-    /**
-     * A static int that hold the north location.
-     */
+    // Constants representing the index for each direction.
     private static final int NORTH = 0;
-
-    /**
-     * A static int that hold the west location.
-     */
     private static final int WEST = 1;
-
-    /**
-     * A static int that hold the south location.
-     */
     private static final int SOUTH = 2;
-
-    /**
-     * A static int that hold the east location.
-     */
     private static final int EAST = 3;
+
+    // Array to hold the doors for the four directions of the room.
     private final TriviaMazeDoor[] myDoors;
+
+    // Flag to track whether this room has been visited by the player.
     private boolean myHasVisited;
 
+    /**
+     * Constructs a TriviaMazeRoom with doors in the specified directions.
+     * Initially, the room is marked as not visited.
+     * @param theRow The row location of this room in the maze.
+     * @param theCol The column location of this room in the maze.
+     * @param theNorth The door leading to the North.
+     * @param theWest The door leading to the West.
+     * @param theSouth The door leading to the South.
+     * @param theEast The door leading to the East.
+     */
     public TriviaMazeRoom(final int theRow, final int theCol, final TriviaMazeDoor theNorth, final TriviaMazeDoor theWest,
                           final TriviaMazeDoor theSouth, final TriviaMazeDoor theEast) {
         myHasVisited = false;
         myDoors = new TriviaMazeDoor[4];
-        if (theRow >= 0 && theRow < myDoors.length && theCol < myDoors.length - 1) {
-            myDoors[EAST] = theEast;
-        }
-        if (theCol >= 0 && theCol < myDoors.length && theRow < myDoors.length - 1) {
-            myDoors[SOUTH] = theSouth;
-        }
-        if (theCol > 0 && theCol < myDoors.length && theRow < myDoors.length) {
-            myDoors[WEST] = theWest;
-        }
-        if (theRow > 0 && theRow < myDoors.length && theCol < myDoors.length) {
-            myDoors[NORTH] = theNorth;
-        }
+        // Initialize doors based on the parameters and room's position.
+        myDoors[NORTH] = theNorth;
+        myDoors[WEST] = theWest;
+        myDoors[SOUTH] = theSouth;
+        myDoors[EAST] = theEast;
     }
 
+    /**
+     * Retrieves the door in the specified direction.
+     * @param theDirection The direction of the door to retrieve (e.g., "north", "south", "east", "west").
+     * @return The TriviaMazeDoor in the specified direction, or null if no door exists in that direction.
+     */
     public TriviaMazeDoor getDoor(final String theDirection) {
         return switch (theDirection.toLowerCase(Locale.ENGLISH)) {
             case "north" -> myDoors[NORTH];
             case "west" -> myDoors[WEST];
             case "south" -> myDoors[SOUTH];
             case "east" -> myDoors[EAST];
-            default -> null;
+            default -> null; // No door for an invalid direction.
         };
     }
 
+    /**
+     * Checks whether this room has been visited.
+     * @return true if the room has been visited; false otherwise.
+     */
     public boolean visited() {
-
         return myHasVisited;
     }
 
+    /**
+     * Marks the room as visited or not visited.
+     * @param theVisit True to mark the room as visited, false otherwise.
+     */
     public void markVisited(boolean theVisit) {
         myHasVisited = theVisit;
     }
 
+    /**
+     * Provides a string representation of the room's state, including the status of each door.
+     * @return A string detailing the state of the doors in this room.
+     */
     @Override
     public String toString() {
-        String[] door = new String[4];
+        String[] doorStates = new String[4];
         for (int i = 0; i < myDoors.length; i++) {
             if (myDoors[i] == null) {
-                door[i] = "XX";
-            } else if (myDoors[i].isMyDoorLocked() && !(myDoors[i].isMyDoorLockedPermanent())) {
-                door[i] = "LK";
+                doorStates[i] = "XX"; // No door or inaccessible.
+            } else if (myDoors[i].isMyDoorLocked() && !myDoors[i].isMyDoorLockedPermanent()) {
+                doorStates[i] = "LK"; // Locked but can be opened.
             } else if (myDoors[i].isMyDoorLockedPermanent()) {
-                door[i] = "XX";
+                doorStates[i] = "XX"; // Permanently locked.
             } else {
-                door[i] = "OP";
+                doorStates[i] = "OP"; // Open.
             }
         }
 
@@ -95,7 +110,7 @@ public class TriviaMazeRoom implements Serializable {
                 ==============================
                 ------------------------------
                 """,
-                door[0], door[1], door[3],door[2]);
+                doorStates[0], doorStates[1], doorStates[3],doorStates[2]);
 
     }
 }

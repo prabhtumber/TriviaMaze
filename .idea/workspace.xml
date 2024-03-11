@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Changed the look of the output.">
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Added Java docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/View/TriviaMazeDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Controller/TriviaMainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Model/TriviaMazeRoom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/View/TriviaMazeDisplay.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +53,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "19",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze/sqlite-jdbc-3.45.1.0.jar",
+    "last_opened_file_path": "C:/Users/prabh/IdeaProjects/TriviaMaze/slf4j-api-1.7.36.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,6 +75,7 @@
   <component name="RunManager">
     <configuration name="TriviaMainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Controller.TriviaMainController" />
       <module name="TriviaMaze" />
       <extension name="coverage">
@@ -148,7 +146,6 @@
       <workItem from="1710107919504" duration="526000" />
       <workItem from="1710108449842" duration="202000" />
       <workItem from="1710127422925" duration="7540000" />
-      <workItem from="1710139201254" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -283,7 +280,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

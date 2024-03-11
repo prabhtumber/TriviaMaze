@@ -83,15 +83,16 @@ public class TriviaMazeRoom implements Serializable {
         return String.format("""
                              ROOM
                 ______________________________
-                            NORTH
-                             ____
-                             |%s|
-                        ____ ---- ____
-                WEST    |%s|  PL  |%s|  EAST
-                        ---- ____ ----
-                             |%s|
-                             ----
-                            SOUTH
+                =============|%s|============-
+                |                            |
+                |                            |
+                |                            |
+                |%s|          PL            |%s|
+                |                            |
+                |                            |
+                |                            |
+                |            |%s|            |
+                ==============================
                 ------------------------------
                 """,
                 door[0], door[1], door[3],door[2]);

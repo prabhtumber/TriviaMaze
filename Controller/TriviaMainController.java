@@ -15,12 +15,11 @@ public final class TriviaMainController implements Serializable {
 
     /**
      * Main entry point for the application.
-     * This method uses EventQueue.invokeLater to ensure that the Trivia game controller
-     * is initialized and executed on the Event Dispatch Thread, adhering to Swing best practices.
-     *
+     * This method just simply calls the game controller to start the
+     * game.
      * @param args Command line arguments, not used in this application.
      */
     public static void main(String[] args) {
-        EventQueue.invokeLater(TriviaGameController::new);
+        new TriviaGameController();
     }
 }

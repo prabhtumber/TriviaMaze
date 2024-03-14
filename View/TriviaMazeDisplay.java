@@ -17,13 +17,13 @@ public class TriviaMazeDisplay {
 
                 // Print each instruction line with a different color
                 System.out.println(white + "In this game, you will navigate through a maze of rooms, each separated by doors with trivia questions." + reset);
-                System.out.println(green + "Each door in the maze has a unique trivia question that you must answer to proceed." + reset);
-                System.out.println(yellow + "Answering a question correctly will unlock the door, allowing you to move to the next room." + reset);
-                System.out.println(red + "Be careful! Answering incorrectly will lock the door forever, blocking that path." + reset);
-                System.out.println(blue + "Your objective is to successfully navigate through the maze by answering all questions correctly." + reset);
-                System.out.println(purple + "If you lock all doors leading to the exit, the game is over, and you will have to start again." + reset);
-                System.out.println(cyan + "Use commands like 'go north', 'go south', 'go east', and 'go west' to move through the maze." + reset);
-                System.out.println(yellow + "To answer a question, simply type your answer when prompted. Good luck!" + reset);
+                System.out.println(red + "Each door in the maze has a unique trivia question that you must answer to proceed." + reset);
+                System.out.println(green + "Answering a question correctly will unlock the door, allowing you to move to the next room." + reset);
+                System.out.println(blue + "Be careful! Answering incorrectly will lock the door forever, blocking that path." + reset);
+                System.out.println(red + "Your objective is to successfully navigate through the maze by answering all questions correctly." + reset);
+                System.out.println(green + "If you lock all doors leading to the exit, the game is over, and you will have to start again." + reset);
+                System.out.println(blue + "Use commands like 'go north', 'go south', 'go east', and 'go west' to move through the maze." + reset);
+                System.out.println(red + "To answer a question, simply type your answer when prompted. Good luck!" + reset);
                 System.out.println(green + "Remember, each choice could be your step towards victory or a dead end. Choose wisely!" + reset);
                 System.out.println(blue + "Let's begin the adventure! Can you clear the maze and emerge victorious?" + reset);
         }
@@ -54,6 +54,8 @@ public class TriviaMazeDisplay {
 
         public void displayTitle() {
                 System.out.println("""
+                         
+                         
                          /$$$$$$$$ /$$$$$$$  /$$$$$$ /$$    /$$ /$$$$$$  /$$$$$$        /$$      /$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$
                         |__  $$__/| $$__  $$|_  $$_/| $$   | $$|_  $$_/ /$$__  $$      | $$$    /$$$ /$$__  $$|_____ $$ | $$_____/
                            | $$   | $$  \\ $$  | $$  | $$   | $$  | $$  | $$  \\ $$      | $$$$  /$$$$| $$  \\ $$     /$$/ | $$     \s

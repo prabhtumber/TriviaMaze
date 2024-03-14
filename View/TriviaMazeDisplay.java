@@ -196,4 +196,17 @@ public class TriviaMazeDisplay {
                 System.out.println("\"Instruction\" for game Instructions");
         }
 
+        public void displaySkippedRoom() {
+                String green = "\u001B[32m";
+                String reset = "\u001B[0m";
+                System.out.println(green + "Magically transported to the next room!" + reset);
+        }
+
+        public void displayNoOpenRooms() {
+                String red = "\u001B[31m";
+                String reset = "\u001B[0m";
+                System.out.println(red+"No adjacent unopened rooms. Can't skip!"+reset);
+        }
+
+
 }

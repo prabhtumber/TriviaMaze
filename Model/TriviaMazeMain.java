@@ -13,7 +13,7 @@ public class TriviaMazeMain implements Serializable {
     private int playerPosX;
     private int playerPosY;
     private final TriviaMazeRoom[][] mazeLayout;
-    private static final int MAZE_SIZE =1;
+    private static final int MAZE_SIZE =2;
     private TriviaMazeDoor currentDoor;
 
     /**
@@ -273,4 +273,24 @@ public class TriviaMazeMain implements Serializable {
         display.append('\n');
         return display.toString();
     }
+
+    public boolean skipToNextOpenRoom() {
+        // Directions in the order: North, West, South, East
+        int[][] directions = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+        String[] directionNames = {"north", "west", "south", "east"};
+
+        for (int i = 0; i < directions.length; i++) {
+            int newX = playerPosX + directions[i][0];
+            int newY = playerPosY + directions[i][1];
+
+            // Check if the new position is within the maze and the room has not been visited
+            if (isValidMove(newX, newY) && !mazeLayout[newX][newY].visited()) {
+                // Move player to the first unvisited adjacent room
+                setPlayerPosition(newX, newY);
+                return true; // Successfully skipped
+            }
+        }
+        return false; // No adjacent unvisited rooms available
+    }
+
 }

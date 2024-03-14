@@ -194,9 +194,28 @@ public class TriviaGameController {
             } else if (playersMove.toLowerCase().matches("help")) {
                 gameHelpMenu();
                 validIn = true;
-            } else {
+            }else if (playersMove.equalsIgnoreCase("gg")) { // Cheat code to skip room
+                skipCurrentRoom();
+                validIn = true;
+            }else {
                 myDisplay.displayWrongIn();
             }
+        }
+    }
+
+
+    /**
+     * Skips the current room by moving the player to an adjacent, unvisited room.
+     */
+    private static void skipCurrentRoom() {
+        // Implement the logic to find an adjacent, unvisited room and move the player there.
+        // This is a placeholder for your game logic.
+        boolean skipped = myMaze.skipToNextOpenRoom(); // Assume this method finds and moves the player.
+
+        if (skipped) {
+            myDisplay.displaySkippedRoom(); // Inform the user that the room has been skipped.
+        } else {
+            myDisplay.displayNoOpenRooms(); // Inform the user if no open rooms are available to skip to.
         }
     }
 
@@ -219,12 +238,12 @@ public class TriviaGameController {
                 System.exit(0);
             } else if (playersIn.toLowerCase().matches("mute")) {
                 muteMusic();  // Mute the music
-                validIn = false;
-                myDisplay.displayFileMenu(); // Re-display the menu
+                validIn = true;
+                //myDisplay.displayFileMenu();
             }else if (playersIn.toLowerCase().matches("unmute")) {
                 playMusic(MUSIC);  // Mute the music
-                validIn = false;
-                myDisplay.displayFileMenu(); // Re-display the menu
+                validIn = true;
+                //myDisplay.displayFileMenu();
             }
 
             else {

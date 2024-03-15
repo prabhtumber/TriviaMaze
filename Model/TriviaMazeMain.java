@@ -13,7 +13,7 @@ public class TriviaMazeMain implements Serializable {
     private int playerPosX;
     private int playerPosY;
     private final TriviaMazeRoom[][] mazeLayout;
-    private static final int MAZE_SIZE =2;
+    private static final int MAZE_SIZE =4;
     private TriviaMazeDoor currentDoor;
 
     /**

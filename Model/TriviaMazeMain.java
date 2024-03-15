@@ -7,6 +7,10 @@ import java.io.Serializable;
  * It handles player movements, room and door management, and game state.
  * The maze is represented as a 2D array of TriviaMazeRoom objects,
  * and the player navigates through by answering trivia questions associated with the doors.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
  */
 public class TriviaMazeMain implements Serializable {
     private static final long serialVersionUID = 7609898967214411735L;
@@ -93,6 +97,7 @@ public class TriviaMazeMain implements Serializable {
     public void setCurrentDoor(String direction) {
         currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
     }
+
 
     /**
      * Checks if the specified door can be moved through (i.e., it exists and is not permanently locked).

@@ -7,7 +7,12 @@ import java.io.Serializable;
 /**
  * Represents a door in the trivia maze game, containing logic related to its locked state,
  * the question associated with it, and methods to interact with these elements.
- * Each door has a trivia question from the TriviaMazeDatabase and can be either locked, unlocked, or permanently locked based on player interactions.
+ * Each door has a trivia question from the TriviaMazeDatabase and can be either locked, unlocked, or permanently
+ * locked based on player interactions.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
  */
 public class TriviaMazeDoor implements Serializable {
     private static final long serialVersionUID = 1335969823606736557L;

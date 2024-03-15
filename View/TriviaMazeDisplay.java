@@ -1,10 +1,24 @@
 package View;
 
+/**
+ * This class is responsible for displaying various elements of the TriviaMaze game.
+ * It includes methods for displaying instructions, the maze, questions, and game statuses.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
+ */
 public class TriviaMazeDisplay {
 
+        /**
+         * Constructor for TriviaMazeDisplay. Initializes a new display instance.
+         */
         public TriviaMazeDisplay() {
-
         }
+
+        /**
+         * Prints the game instructions with different color codes for emphasis.
+         */
         public void MazeInstruction() {
                 String reset = "\u001B[0m";
                 String red = "\u001B[31m";
@@ -28,6 +42,10 @@ public class TriviaMazeDisplay {
                 System.out.println(blue + "Let's begin the adventure! Can you clear the maze and emerge victorious?" + reset);
         }
 
+        /**
+         * Displays the current state of the maze.
+         * @param theMaze The current maze layout in String format.
+         */
         public void displayMaze(final String theMaze) {
                 System.out.println("\t\t\t     MAZE");
                 System.out.print("--------------------------------------------");
@@ -35,42 +53,56 @@ public class TriviaMazeDisplay {
                 System.out.println("--------------------------------------------");
         }
 
+        /**
+         * Displays the current room status.
+         * @param theDoor The status of the current door in String format.
+         */
         public void displayRoom(final String theDoor) {
                 System.out.print(theDoor);
         }
 
+        /**
+         * Displays the game type options to the player.
+         */
         public void DisplayGameType() {
                 System.out.println("""
 
                                 NEW - 𝓝𝓮𝔀 𝓰𝓪𝓶𝓮                 LOAD - 𝑳𝒐𝒂𝒅 𝒈𝒂𝒎𝒆""");
-
         }
 
+        /**
+         * Displays the available navigation and menu options to the player.
+         */
         public void displayDirection() {
                 System.out.println("Options: |MENU| - |HELP| ");
                 System.out.println("Type an option or direction");
                 System.out.println();
         }
 
+        /**
+         * Displays the game title in a stylized ASCII art format.
+         */
         public void displayTitle() {
                 System.out.println("""
                          
                          
                          /$$$$$$$$ /$$$$$$$  /$$$$$$ /$$    /$$ /$$$$$$  /$$$$$$        /$$      /$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$
                         |__  $$__/| $$__  $$|_  $$_/| $$   | $$|_  $$_/ /$$__  $$      | $$$    /$$$ /$$__  $$|_____ $$ | $$_____/
-                           | $$   | $$  \\ $$  | $$  | $$   | $$  | $$  | $$  \\ $$      | $$$$  /$$$$| $$  \\ $$     /$$/ | $$     \s
-                           | $$   | $$$$$$$/  | $$  |  $$ / $$/  | $$  | $$$$$$$$      | $$ $$/$$ $$| $$$$$$$$    /$$/  | $$$$$  \s
-                           | $$   | $$__  $$  | $$   \\  $$ $$/   | $$  | $$__  $$      | $$  $$$| $$| $$__  $$   /$$/   | $$__/  \s
-                           | $$   | $$  \\ $$  | $$    \\  $$$/    | $$  | $$  | $$      | $$\\  $ | $$| $$  | $$  /$$/    | $$     \s
+                           | $$   | $$  \\ $$  | $$  | $$   | $$  | $$  | $$  \\ $$      | $$$$  /$$$$| $$  \\ $$     /$$/ | $$     \\
+                           | $$   | $$$$$$$/  | $$  |  $$ / $$/  | $$  | $$$$$$$$      | $$ $$/$$ $$| $$$$$$$$    /$$/  | $$$$$  \\
+                           | $$   | $$__  $$  | $$   \\  $$ $$/   | $$  | $$__  $$      | $$  $$$| $$| $$__  $$   /$$/   | $$__/  \\
+                           | $$   | $$  \\ $$  | $$    \\  $$$/    | $$  | $$  | $$      | $$\\  $ | $$| $$  | $$  /$$/    | $$     \\
                            | $$   | $$  | $$ /$$$$$$   \\  $/    /$$$$$$| $$  | $$      | $$ \\/  | $$| $$  | $$ /$$$$$$$$| $$$$$$$$
                            |__/   |__/  |__/|______/    \\_/    |______/|__/  |__/      |__/     |__/|__/  |__/|________/|________/
-                                                                                                                                 \s
-                                                                                                                                 \s
-                                                                                                                                 \s
+                                                                                                                                 
+                                                                                                                                 
+                                                                                                                                 
                         """);
-
         }
 
+        /**
+         * Displays game instructions and room legend to the player.
+         */
         public void displayInstruction() {
                 String reset = "\u001B[0m";
                 String red = "\u001B[31m";
@@ -105,15 +137,25 @@ public class TriviaMazeDisplay {
                 System.out.println();
         }
 
+        /**
+         * Displays the current trivia question to the player.
+         * @param theQuestion The trivia question in String format.
+         */
         public void displayQuestion(final String theQuestion) {
                 System.out.println(theQuestion);
         }
 
+        /**
+         * Displays the correct answer to the current trivia question.
+         * @param theAnswer The correct answer in String format.
+         */
         public void displayAnswer(final String theAnswer) {
                 System.out.println("The right answer was " + theAnswer);
-
         }
 
+        /**
+         * Displays the message indicating that the player has won the game.
+         */
         public void displayPlayerWon() {
                 System.out.println("CONGRATULATIONS! YOU WON!");
                 System.out.println("\n\n");
@@ -130,60 +172,78 @@ public class TriviaMazeDisplay {
                                         ~*~@~*~@~*~       \\   \\      |   /     #$#$#$#   00  .`,.',
                                           ~@~*~@~ \\        \\   \\     |  /      /#$#$#   /|||  `.,'
                                       _____________\\________\\___\\____|_/______/_________|\\/\\___||______ """);
-
-
                 System.out.println("\n\n");
-
         }
 
+        /**
+         * Displays the message indicating that the player has lost the game.
+         */
         public void displayPlayerLost() {
                 System.out.println("Sorry, there are no more doors to unlock. You Have Lost...");
-
                 System.out.println();
-
                 System.out.println("""
-                         /$$     /$$                        /$$                       /$$   \s
-                        |  $$   /$$/                       | $$                      | $$   \s
-                         \\  $$ /$$//$$$$$$  /$$   /$$      | $$  /$$$$$$   /$$$$$$$ /$$$$$$ \s
-                          \\  $$$$//$$__  $$| $$  | $$      | $$ /$$__  $$ /$$_____/|_  $$_/ \s
-                           \\  $$/| $$  \\ $$| $$  | $$      | $$| $$  \\ $$|  $$$$$$   | $$   \s
+                         /$$     /$$                        /$$                       /$$   
+                        |  $$   /$$/                       | $$                      | $$   
+                         \\  $$ /$$//$$$$$$  /$$   /$$      | $$  /$$$$$$   /$$$$$$$ /$$$$$$ 
+                          \\  $$$$//$$__  $$| $$  | $$      | $$ /$$__  $$ /$$_____/|_  $$_/ 
+                           \\  $$/| $$  \\ $$| $$  | $$      | $$| $$  \\ $$|  $$$$$$   | $$   
                             | $$ | $$  | $$| $$  | $$      | $$| $$  | $$ \\____  $$  | $$ /$$
                             | $$ |  $$$$$$/|  $$$$$$/      | $$|  $$$$$$/ /$$$$$$$/  |  $$$$/
-                            |__/  \\______/  \\______/       |__/ \\______/ |_______/    \\___/ \s
-                                                                                            \s
-                                                                                            \s
-                                                                                            \s
-                        """);
+                            |__/  \\______/  \\______/       |__/ \\______/ |_______/    \\___/  """);
         }
 
+        /**
+         * Displays the message indicating that the player's answer is correct.
+         */
         public void displayCorrect() {
                 System.out.println("CORRECT! You may proceed");
         }
 
+        /**
+         * Displays the message indicating that the player's answer is incorrect.
+         */
         public void displayIncorrect() {
                 System.out.println("INCORRECT! TriviaDoor is now locked forever");
         }
 
+        /**
+         * Displays the message indicating file operation success.
+         */
         public void displayFileSuccess() {
                 System.out.println("Success");
         }
 
+        /**
+         * Displays the message indicating file operation failure.
+         */
         public void displayFileFailed() {
                 System.out.println("Failed");
         }
 
+        /**
+         * Displays the message indicating incorrect input by the player.
+         */
         public void displayWrongIn() {
                 System.out.println("Wrong Input Try Again.");
         }
 
+        /**
+         * Displays the message indicating that the player has attempted to move in an invalid direction.
+         */
         public void displayWrongDirection() {
                 System.out.println("Can't go that Direction. Try again.");
         }
 
+        /**
+         * Displays the message indicating that the player has returned to a previously visited room.
+         */
         public void displayVisited() {
                 System.out.println("You already visited this room. Welcome back");
         }
 
+        /**
+         * Displays options for the file menu.
+         */
         public void displayFileMenu() {
                 System.out.println("Type one of the following:");
                 System.out.println("\"Save\" to save game");
@@ -192,23 +252,30 @@ public class TriviaMazeDisplay {
                 System.out.println("\"Mute\" to mute the music");
         }
 
+        /**
+         * Displays options for the help menu.
+         */
         public void displayHelpMenu() {
                 System.out.println("Type one of the following:");
                 System.out.println("\"About\" for information about the game");
                 System.out.println("\"Instruction\" for game Instructions");
         }
 
+        /**
+         * Displays the message indicating the player has skipped a room.
+         */
         public void displaySkippedRoom() {
                 String green = "\u001B[32m";
                 String reset = "\u001B[0m";
                 System.out.println(green + "Magically transported to the next room!" + reset);
         }
 
+        /**
+         * Displays the message indicating there are no adjacent open rooms to skip to.
+         */
         public void displayNoOpenRooms() {
                 String red = "\u001B[31m";
                 String reset = "\u001B[0m";
-                System.out.println(red+"No adjacent unopened rooms. Can't skip!"+reset);
+                System.out.println(red + "No adjacent unopened rooms. Can't skip!" + reset);
         }
-
-
 }

@@ -6,7 +6,12 @@ import java.util.Locale;
 /**
  * Represents a room within the trivia maze game.
  * Each room is connected to four other rooms in the North, South, East, and West directions.
- * Each connection is represented by a door, which may be locked, unlocked, or permanently locked based on the game's progress.
+ * Each connection is represented by a door, which may be locked, unlocked, or permanently locked based on the
+ * game's progress.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
  */
 public class TriviaMazeRoom implements Serializable {
     private static final long serialVersionUID = 638649015203610635L;

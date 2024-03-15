@@ -6,12 +6,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Model.questionClasses.*;
-import Model.questionClasses.Question;
 import org.sqlite.SQLiteDataSource;
 import java.util.Random;
 
+/**
+ * Class handling the database interactions for retrieving Trivia Maze questions.
+ * It is responsible for fetching different types of questions (Short Answer, Multiple Choice, True/False)
+ * from the SQLite database and constructing question objects from them.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
+ */
 public class TriviaMazeDatabase implements Serializable {
     private static final long serialVersionUID = 1887880497416979668L;
+
+    /**
+     * Fetches a random question from the database.
+     * The type of question (Short Answer, Multiple Choice, True/False) is also selected randomly.
+     * @return A Question object representing the randomly selected question, or null if there's an issue.
+     */
     public static Question getQuestion() {
         Random random = new Random();
 
@@ -23,6 +37,10 @@ public class TriviaMazeDatabase implements Serializable {
         };
     }
 
+    /**
+     * Retrieves a random Short Answer question from the database.
+     * @return A ShortAnswerQuestion object, or null if an error occurs during database access.
+     */
     private static Question getShortAnswerQuestion() {
         SQLiteDataSource ds = null;
 
@@ -36,7 +54,7 @@ public class TriviaMazeDatabase implements Serializable {
 
         String query = "SELECT * FROM shortAnswerTable ORDER BY RANDOM() Limit 1";
         try (Connection conn = ds.getConnection();
-                Statement stmt = conn.createStatement();) {
+             Statement stmt = conn.createStatement()) {
 
             ResultSet rs = stmt.executeQuery(query);
 
@@ -54,6 +72,10 @@ public class TriviaMazeDatabase implements Serializable {
         return null;
     }
 
+    /**
+     * Retrieves a random Multiple Choice Question (MCQ) from the database.
+     * @return A MultipleChoiceQuestion object, or null if an error occurs during database access.
+     */
     private static Question getMCQQuestion() {
         SQLiteDataSource ds = null;
 
@@ -67,7 +89,7 @@ public class TriviaMazeDatabase implements Serializable {
 
         String query = "SELECT * FROM MCQTable ORDER BY RANDOM() Limit 1";
         try (Connection conn = ds.getConnection();
-                Statement stmt = conn.createStatement();) {
+             Statement stmt = conn.createStatement()) {
 
             ResultSet rs = stmt.executeQuery(query);
 
@@ -75,6 +97,7 @@ public class TriviaMazeDatabase implements Serializable {
                 String question = rs.getString("QUESTION");
                 String answer = rs.getString("ANSWER");
 
+                // Note: Correct the class name if necessary, for instance, if it should be MultipleChoiceQuestion instead of multipleChoiceQuestion.
                 return new multipleChoiceQuestion(question, answer);
 
             }
@@ -85,6 +108,10 @@ public class TriviaMazeDatabase implements Serializable {
         return null;
     }
 
+    /**
+     * Retrieves a random True or False question from the database.
+     * @return A TrueFalseQuestion object, or null if an error occurs during database access.
+     */
     private static Question getTrueFalseQuestion() {
         SQLiteDataSource ds = null;
 
@@ -98,7 +125,7 @@ public class TriviaMazeDatabase implements Serializable {
 
         String query = "SELECT * FROM trueFalseTable ORDER BY RANDOM() Limit 1";
         try (Connection conn = ds.getConnection();
-                Statement stmt = conn.createStatement();) {
+             Statement stmt = conn.createStatement()) {
 
             ResultSet rs = stmt.executeQuery(query);
 

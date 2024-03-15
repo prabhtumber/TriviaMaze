@@ -9,6 +9,10 @@ import javax.sound.sampled.*;
 /**
  * The controller class for the Trivia Maze game. It controls the flow of the game,
  * manages user input and interactions between the model and the view.
+ *
+ * @author Virat Singh
+ * @author Prabhjeet Singh
+ * @version 03/15/2024
  */
 public class TriviaGameController {
 

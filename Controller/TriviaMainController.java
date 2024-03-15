@@ -8,6 +8,10 @@ import java.io.Serializable;
  * It initializes and runs the main game controller in the Event Dispatch Thread (EDT).
  * This class is marked as final to prevent subclassing, and implements Serializable to allow instances
  * of this class to be serialized.
+ *
+ *  @author Virat Singh
+ *  @author Prabhjeet Singh
+ *  @version 03/15/2024
  */
 public final class TriviaMainController implements Serializable {
 

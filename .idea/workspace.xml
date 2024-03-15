@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Completed JavaDocs for the project" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Completed JavaDocs for the project">
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TriviaMaze/Test/TriviaMazeDatabaseTest$3.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

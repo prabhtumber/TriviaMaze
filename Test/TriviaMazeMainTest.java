@@ -34,7 +34,7 @@ class TriviaMazeMainTest {
      */
     @Test
     void testMazeInitialization() {
-        TriviaMazeRoom[][] mazeLayout = game.getMazeLayout(); // Retrieve the layout of the maze
+        TriviaMazeRoom[][] mazeLayout = game.getMyMazeLayout(); // Retrieve the layout of the maze
         assertNotNull(mazeLayout, "Maze layout should not be null");
         assertEquals(4, mazeLayout.length, "Maze should have 4 rows");
         assertEquals(4, mazeLayout[0].length, "Maze should have 4 columns");
@@ -128,7 +128,7 @@ class TriviaMazeMainTest {
      */
     @Test
     void testEvaluatePlayerAnswer_Correct() {
-        game.setCurrentDoor("east"); // Set current door to 'east'
+        game.setMyCurrentDoor("east"); // Set current door to 'east'
         String correctAnswer = game.getAnswerForDoor(); // Get correct answer for current door
         game.evaluatePlayerAnswer(correctAnswer); // Evaluate player's answer
         assertFalse(game.isDoorLocked(), "Door should be unlocked after providing the correct answer");
@@ -139,7 +139,7 @@ class TriviaMazeMainTest {
      */
     @Test
     void testEvaluatePlayerAnswer_Incorrect() {
-        game.setCurrentDoor("east"); // Set current door to 'east'
+        game.setMyCurrentDoor("east"); // Set current door to 'east'
         game.evaluatePlayerAnswer("wrongAnswer"); // Evaluate player's answer
         assertTrue(game.isDoorPermanentlyLocked(), "Door should be permanently locked after providing the wrong answer");
     }

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Made some changes" />
+    <list default="true" id="ed526273-4494-4377-ada0-5bd0f383f599" name="Changes" comment="Completed JavaDocs for the project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/TriviaGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/TriviaGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/TriviaMazeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/TriviaMazeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/TriviaMazeMainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/TriviaMazeMainTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,8 +165,6 @@
       <workItem from="1710494553568" duration="1429000" />
       <workItem from="1710532315138" duration="157000" />
       <workItem from="1710532491415" duration="467000" />
-      <workItem from="1710556317572" duration="295000" />
-      <workItem from="1710556959253" duration="184000" />
     </task>
     <task id="LOCAL-00001" summary="added Trivia Door class">
       <created>1707727655154</created>
@@ -295,23 +298,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710532921972</updated>
     </task>
-    <task id="LOCAL-00019" summary="Completed JavaDocs for the project">
-      <option name="closed" value="true" />
-      <created>1710535732342</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1710535732342</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Made some changes">
-      <option name="closed" value="true" />
-      <created>1710557134994</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1710557134994</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,11 +339,25 @@
     <MESSAGE value="Added music when game runs." />
     <MESSAGE value="Added Java docs" />
     <MESSAGE value="Completed JavaDocs for the project" />
-    <MESSAGE value="Made some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed JavaDocs for the project" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TriviaMaze$TriviaMazeDoorTest.ic" NAME="TriviaMazeDoorTest Coverage Results" MODIFIED="1710479704531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TriviaMaze$TriviaMazeMainTest.ic" NAME="TriviaMazeMainTest Coverage Results" MODIFIED="1710480848241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TriviaMaze$TriviaMazeRoomTest.ic" NAME="TriviaMazeRoomTest Coverage Results" MODIFIED="1710479769151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TriviaMaze$TriviaMazeDatabaseTest.ic" NAME="TriviaMazeDatabaseTest Coverage Results" MODIFIED="1710484228553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+      <FILTER>Model.*</FILTER>
+    </SUITE>
   </component>
 </project>

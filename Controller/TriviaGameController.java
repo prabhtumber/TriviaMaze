@@ -283,7 +283,7 @@ public class TriviaGameController {
      */
     private static boolean player_Movement(final String theDirection) {
         boolean success = false;
-        myMaze.setCurrentDoor(theDirection);
+        myMaze.setMyCurrentDoor(theDirection);
         if (myMaze.canMove()) {
             success = true;
             if (myMaze.isDoorLocked()) {

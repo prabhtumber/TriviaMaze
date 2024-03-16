@@ -14,19 +14,19 @@ import java.io.Serializable;
  */
 public class TriviaMazeMain implements Serializable {
     private static final long serialVersionUID = 7609898967214411735L;
-    private int playerPosX;
-    private int playerPosY;
-    private final TriviaMazeRoom[][] mazeLayout;
+    private int myPlayerPosX;
+    private int myPlayerPosY;
+    private final TriviaMazeRoom[][] myMazeLayout;
     private static final int MAZE_SIZE =4;
-    private TriviaMazeDoor currentDoor;
+    private TriviaMazeDoor myCurrentDoor;
 
     /**
      * Constructs a new TriviaMazeMain instance.
      * Initializes the starting position of the player and the layout of the maze.
      */
     public TriviaMazeMain() {
-        playerPosX = playerPosY = 0;
-        mazeLayout = new TriviaMazeRoom[MAZE_SIZE][MAZE_SIZE];
+        myPlayerPosX = myPlayerPosY = 0;
+        myMazeLayout = new TriviaMazeRoom[MAZE_SIZE][MAZE_SIZE];
         maze_Initialization();
     }
 
@@ -39,13 +39,13 @@ public class TriviaMazeMain implements Serializable {
         for (int rowIndex = 0; rowIndex < MAZE_SIZE; rowIndex++) {
             for (int columnIndex = 0; columnIndex < MAZE_SIZE; columnIndex++) {
                 // Establish connections to adjacent rooms if applicable
-                TriviaMazeDoor doorToNorth = rowIndex > 0 ? mazeLayout[rowIndex - 1][columnIndex].getDoor("south") : null;
-                TriviaMazeDoor doorToWest = columnIndex > 0 ? mazeLayout[rowIndex][columnIndex - 1].getDoor("east") : null;
+                TriviaMazeDoor doorToNorth = rowIndex > 0 ? myMazeLayout[rowIndex - 1][columnIndex].getDoor("south") : null;
+                TriviaMazeDoor doorToWest = columnIndex > 0 ? myMazeLayout[rowIndex][columnIndex - 1].getDoor("east") : null;
                 // Doors to the south and east are always new as this initializes row by row, column by column
                 TriviaMazeDoor doorToSouth = new TriviaMazeDoor();
                 TriviaMazeDoor doorToEast = new TriviaMazeDoor();
                 // Set the current room with its respective doors
-                mazeLayout[rowIndex][columnIndex] = new TriviaMazeRoom(rowIndex, columnIndex, doorToNorth, doorToWest, doorToSouth, doorToEast);
+                myMazeLayout[rowIndex][columnIndex] = new TriviaMazeRoom(rowIndex, columnIndex, doorToNorth, doorToWest, doorToSouth, doorToEast);
             }
         }
     }
@@ -55,8 +55,8 @@ public class TriviaMazeMain implements Serializable {
      *
      * @return The current maze layout.
      */
-    public TriviaMazeRoom[][] getMazeLayout() {
-        return mazeLayout;
+    public TriviaMazeRoom[][] getMyMazeLayout() {
+        return myMazeLayout;
     }
 
     /**
@@ -65,19 +65,19 @@ public class TriviaMazeMain implements Serializable {
      * @return An array containing the player's current x and y coordinates in the maze.
      */
     public int[] getPlayerPosition() {
-        int[] position = {playerPosX, playerPosY};
+        int[] position = {myPlayerPosX, myPlayerPosY};
         return position;
     }
 
     /**
      * Sets the player's position in the maze to the specified coordinates.
      *
-     * @param x The new x-coordinate of the player.
-     * @param y The new y-coordinate of the player.
+     * @param theX The new theX-coordinate of the player.
+     * @param theY The new theY-coordinate of the player.
      */
-    public void setPlayerPosition(int x, int y) {
-        playerPosY = y;
-        playerPosX = x;
+    public void setPlayerPosition(int theX, int theY) {
+        myPlayerPosY = theY;
+        myPlayerPosX = theX;
     }
 
     /**
@@ -86,16 +86,16 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the player has reached the bottom-right corner of the maze; false otherwise.
      */
     public boolean isGameCompleted() {
-        return playerPosX == MAZE_SIZE - 1 && playerPosY == MAZE_SIZE - 1;
+        return myPlayerPosX == MAZE_SIZE - 1 && myPlayerPosY == MAZE_SIZE - 1;
     }
 
     /**
-     * Sets the current door based on the direction the player intends to move.
+     * Sets the current door based on the theDirection the player intends to move.
      *
-     * @param direction The direction of the door to set as the current door ('north', 'south', 'east', 'west').
+     * @param theDirection The theDirection of the door to set as the current door ('north', 'south', 'east', 'west').
      */
-    public void setCurrentDoor(String direction) {
-        currentDoor = mazeLayout[playerPosX][playerPosY].getDoor(direction);
+    public void setMyCurrentDoor(String theDirection) {
+        myCurrentDoor = myMazeLayout[myPlayerPosX][myPlayerPosY].getDoor(theDirection);
     }
 
 
@@ -115,7 +115,7 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the current door can be moved through; false otherwise.
      */
     public boolean canMove() {
-        return currentDoor != null && !currentDoor.isMyDoorLockedPermanent();
+        return myCurrentDoor != null && !myCurrentDoor.isMyDoorLockedPermanent();
     }
 
     /**
@@ -124,7 +124,7 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the current door is locked; false otherwise.
      */
     public boolean isDoorLocked() {
-        return currentDoor.isMyDoorLocked();
+        return myCurrentDoor.isMyDoorLocked();
     }
 
     /**
@@ -133,7 +133,7 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the current door is permanently locked; false otherwise.
      */
     public boolean isDoorPermanentlyLocked() {
-        return currentDoor.isMyDoorLockedPermanent();
+        return myCurrentDoor.isMyDoorLockedPermanent();
     }
 
     /**
@@ -142,7 +142,7 @@ public class TriviaMazeMain implements Serializable {
      * @return The question of the current door.
      */
     public String getQuestionForDoor() {
-        return currentDoor.getQuestion();
+        return myCurrentDoor.getQuestion();
     }
 
     /**
@@ -151,7 +151,7 @@ public class TriviaMazeMain implements Serializable {
      * @return The answer to the current door's question.
      */
     public String getAnswerForDoor() {
-        return currentDoor.getQuestionAnswer();
+        return myCurrentDoor.getQuestionAnswer();
     }
 
     /**
@@ -160,7 +160,7 @@ public class TriviaMazeMain implements Serializable {
      * @param answer The player's answer to the question.
      */
     public void evaluatePlayerAnswer(String answer) {
-        currentDoor.isRightAnswer(answer);
+        myCurrentDoor.isRightAnswer(answer);
     }
 
     /**
@@ -169,7 +169,7 @@ public class TriviaMazeMain implements Serializable {
      * @return A string representation of the current room.
      */
     public String getRoomInfo() {
-        return mazeLayout[playerPosX][playerPosY].toString();
+        return myMazeLayout[myPlayerPosX][myPlayerPosY].toString();
     }
 
     /**
@@ -179,10 +179,10 @@ public class TriviaMazeMain implements Serializable {
      */
     public void movePlayer(String direction) {
         switch (direction) {
-            case "north" -> playerPosX--;
-            case "west" -> playerPosY--;
-            case "south" -> playerPosX++;
-            case "east" -> playerPosY++;
+            case "north" -> myPlayerPosX--;
+            case "west" -> myPlayerPosY--;
+            case "south" -> myPlayerPosX++;
+            case "east" -> myPlayerPosY++;
         }
     }
 
@@ -192,12 +192,12 @@ public class TriviaMazeMain implements Serializable {
      * @return true if a path exists; false otherwise.
      */
     public boolean hasPossiblePath() {
-        for (TriviaMazeRoom[] roomArray : mazeLayout) {
+        for (TriviaMazeRoom[] roomArray : myMazeLayout) {
             for (TriviaMazeRoom room : roomArray) {
                 room.markVisited(false);
             }
         }
-        return searchForExit(playerPosX, playerPosY);
+        return searchForExit(myPlayerPosX, myPlayerPosY);
     }
 
     /**
@@ -211,20 +211,20 @@ public class TriviaMazeMain implements Serializable {
     private boolean searchForExit(int currentX, int currentY) {
         boolean pathFound = false;
         if (isValidMove(currentX, currentY)) {
-            mazeLayout[currentX][currentY].markVisited(true);
+            myMazeLayout[currentX][currentY].markVisited(true);
             if (isExitReached(currentX, currentY)) {
                 return true;
             }
-            if (canMove(mazeLayout[currentX][currentY].getDoor("north"))) {
+            if (canMove(myMazeLayout[currentX][currentY].getDoor("north"))) {
                 pathFound = searchForExit(currentX - 1, currentY);
             }
-            if (!pathFound && canMove(mazeLayout[currentX][currentY].getDoor("west"))) {
+            if (!pathFound && canMove(myMazeLayout[currentX][currentY].getDoor("west"))) {
                 pathFound = searchForExit(currentX, currentY - 1);
             }
-            if (!pathFound && canMove(mazeLayout[currentX][currentY].getDoor("south"))) {
+            if (!pathFound && canMove(myMazeLayout[currentX][currentY].getDoor("south"))) {
                 pathFound = searchForExit(currentX + 1, currentY);
             }
-            if (!pathFound && canMove(mazeLayout[currentX][currentY].getDoor("east"))) {
+            if (!pathFound && canMove(myMazeLayout[currentX][currentY].getDoor("east"))) {
                 pathFound = searchForExit(currentX, currentY + 1);
             }
         }
@@ -239,7 +239,7 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the coordinates reach the exit; false otherwise.
      */
     private boolean isExitReached(int x, int y) {
-        return x == mazeLayout.length - 1 && y == mazeLayout[x].length - 1;
+        return x == myMazeLayout.length - 1 && y == myMazeLayout[x].length - 1;
     }
 
     /**
@@ -250,7 +250,7 @@ public class TriviaMazeMain implements Serializable {
      * @return true if the move is valid; false otherwise.
      */
     private boolean isValidMove(int row, int col) {
-        return row >= 0 && row < MAZE_SIZE && col >= 0 && col < MAZE_SIZE && !(mazeLayout[row][col].visited());
+        return row >= 0 && row < MAZE_SIZE && col >= 0 && col < MAZE_SIZE && !(myMazeLayout[row][col].visited());
     }
 
     /**
@@ -264,9 +264,9 @@ public class TriviaMazeMain implements Serializable {
         for (int row = 0; row < MAZE_SIZE; row++) {
             display.append("\n\t\t");
             for (int col = 0; col < MAZE_SIZE; col++) {
-                if (row == 0 && col == 0 && !(playerPosX == row && playerPosY == col)) {
+                if (row == 0 && col == 0 && !(myPlayerPosX == row && myPlayerPosY == col)) {
                     display.append("|ST|");
-                } else if (playerPosX == row && playerPosY == col) {
+                } else if (myPlayerPosX == row && myPlayerPosY == col) {
                     display.append("| PL |");
                 } else if (row == MAZE_SIZE - 1 && col == MAZE_SIZE - 1) {
                     display.append("| ED |");
@@ -285,11 +285,11 @@ public class TriviaMazeMain implements Serializable {
         String[] directionNames = {"north", "west", "south", "east"};
 
         for (int i = 0; i < directions.length; i++) {
-            int newX = playerPosX + directions[i][0];
-            int newY = playerPosY + directions[i][1];
+            int newX = myPlayerPosX + directions[i][0];
+            int newY = myPlayerPosY + directions[i][1];
 
             // Check if the new position is within the maze and the room has not been visited
-            if (isValidMove(newX, newY) && !mazeLayout[newX][newY].visited()) {
+            if (isValidMove(newX, newY) && !myMazeLayout[newX][newY].visited()) {
                 // Move player to the first unvisited adjacent room
                 setPlayerPosition(newX, newY);
                 return true; // Successfully skipped

@@ -18,7 +18,7 @@ import java.util.Random;
  * @author Prabhjeet Singh
  * @version 03/15/2024
  */
-public class TriviaMazeDatabase implements Serializable {
+public class TriviaMazeQuestionFactory implements Serializable {
     private static final long serialVersionUID = 1887880497416979668L;
 
     /**

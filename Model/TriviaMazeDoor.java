@@ -27,7 +27,7 @@ public class TriviaMazeDoor implements Serializable {
     public TriviaMazeDoor() {
         myDoorLocked = true;
         myDoorLockedPermanent = false;
-        myDoorQuestion = TriviaMazeDatabase.getQuestion();
+        myDoorQuestion = TriviaMazeQuestionFactory.getQuestion();
     }
 
     /**
